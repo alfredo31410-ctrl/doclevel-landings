@@ -5,6 +5,17 @@ import "./styles.css";
 
 const whatsappGroupUrl =
   import.meta.env.VITE_WHATSAPP_GROUP_URL || "https://chat.whatsapp.com/REEMPLAZAR_ENLACE";
+const landingBasePath = "/papa-primerizo";
+
+function getLandingHomePath() {
+  return window.location.pathname.toLowerCase().startsWith(landingBasePath)
+    ? landingBasePath
+    : "/";
+}
+
+function getLandingThanksPath() {
+  return `${getLandingHomePath().replace(/\/$/, "")}/gracias`;
+}
 
 function ActiveCampaignModal({ isOpen, onClose }) {
   useEffect(() => {
@@ -26,7 +37,7 @@ function ActiveCampaignModal({ isOpen, onClose }) {
       if (hasRedirected) return;
       hasRedirected = true;
       window.setTimeout(() => {
-        window.location.assign("/gracias");
+        window.location.assign(getLandingThanksPath());
       }, 900);
     };
 
@@ -88,7 +99,7 @@ function RegistrationLanding() {
     <main className="single-screen register-screen">
       <section className="landing-shell">
         <div className="copy-column">
-          <a className="brand" href="/" aria-label="Doc Level">
+          <a className="brand" href={getLandingHomePath()} aria-label="Doc Level">
             <span className="brand-mark">DL</span>
             <span>Doc Level</span>
           </a>
@@ -129,7 +140,7 @@ function ThanksLanding() {
   return (
     <main className="single-screen thanks-screen">
       <section className="thanks-shell">
-        <a className="brand centered-brand" href="/" aria-label="Doc Level">
+        <a className="brand centered-brand" href={getLandingHomePath()} aria-label="Doc Level">
           <span className="brand-mark">DL</span>
           <span>Doc Level</span>
         </a>
