@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/papa-primerizo/assets/:path*",
+      "destination": "/assets/:path*"
+    },
+    {
+      "source": "/papa-primerizo/:path*",
+      "destination": "/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

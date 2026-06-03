@@ -39,11 +39,11 @@ En el repo `alfredo31410-ctrl/DocLevel`, agrega o ajusta `vercel.json` para que 
   "rewrites": [
     {
       "source": "/papa-primerizo",
-      "destination": "https://doclevel-landings.vercel.app/papa-primerizo"
+      "destination": "https://doclevel-landings.vercel.app"
     },
     {
       "source": "/papa-primerizo/:path*",
-      "destination": "https://doclevel-landings.vercel.app/papa-primerizo/:path*"
+      "destination": "https://doclevel-landings.vercel.app/:path*"
     }
   ]
 }
