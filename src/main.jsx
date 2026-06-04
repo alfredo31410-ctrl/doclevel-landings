@@ -6,15 +6,12 @@ import "./styles.css";
 const whatsappGroupUrl =
   import.meta.env.VITE_WHATSAPP_GROUP_URL || "https://chat.whatsapp.com/REEMPLAZAR_ENLACE";
 const landingBasePath = "/papa-primerizo";
+const canonicalThanksUrl = "https://www.doclevelacademy.com/papa-primerizo/gracias";
 
 function getLandingHomePath() {
   return window.location.pathname.toLowerCase().startsWith(landingBasePath)
     ? landingBasePath
     : "/";
-}
-
-function getLandingThanksPath() {
-  return `${getLandingHomePath().replace(/\/$/, "")}/gracias`;
 }
 
 function ActiveCampaignModal({ isOpen, onClose }) {
@@ -37,7 +34,7 @@ function ActiveCampaignModal({ isOpen, onClose }) {
       if (hasRedirected) return;
       hasRedirected = true;
       window.setTimeout(() => {
-        window.location.assign(getLandingThanksPath());
+        window.location.assign(canonicalThanksUrl);
       }, 900);
     };
 
