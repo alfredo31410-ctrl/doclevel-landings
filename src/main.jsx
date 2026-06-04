@@ -150,6 +150,11 @@ function RegistrationLanding() {
 }
 
 function ThanksLanding() {
+  useEffect(() => {
+    if (window.fbq) {
+      fbq('track', 'CompleteRegistration');
+    }
+  }, []);
   return (
     <main className="landing-page thanks-page">
       <LogoExit />
