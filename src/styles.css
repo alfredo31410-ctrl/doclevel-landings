@@ -67,13 +67,13 @@ a {
   height: auto;
   left: clamp(32px, 5.5vw, 72px);
   position: absolute;
-  top: clamp(14px, 2.4vw, 30px);
+  top: clamp(10px, 2vw, 24px);
   z-index: 8;
 }
 
 .logo-exit img {
   display: block;
-  height: clamp(54px, 6vw, 72px);
+  height: clamp(50px, 5.4vw, 66px);
   object-fit: contain;
   width: auto;
 }
@@ -86,7 +86,7 @@ a {
   margin: 0 auto;
   max-width: 1440px;
   min-height: 100dvh;
-  padding: clamp(82px, 10vh, 104px) clamp(28px, 5.5vw, 72px) clamp(18px, 3vh, 34px);
+  padding: clamp(72px, 8.5vh, 90px) clamp(28px, 5.5vw, 72px) clamp(14px, 2.4vh, 28px);
   position: relative;
   z-index: 4;
 }
@@ -135,7 +135,7 @@ a {
 
 .headline-block h1 {
   color: #020202;
-  font-size: clamp(2.35rem, 5.25vw, 4.55rem);
+  font-size: clamp(2.2rem, 4.95vw, 4.25rem);
   font-weight: 950;
   letter-spacing: 0;
   line-height: 0.94;
@@ -145,15 +145,17 @@ a {
 }
 
 .headline-block h1 span {
-  color: #15a9ff;
+  color: #008ee8;
   display: block;
-  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.52),
+    0 14px 30px rgba(0, 22, 70, 0.34);
 }
 
 .headline-block h1 em {
   color: #ffffff;
   display: block;
-  font-size: clamp(1.28rem, 2.65vw, 2.35rem);
+  font-size: clamp(1.18rem, 2.45vw, 2.15rem);
   font-style: normal;
   line-height: 1.08;
   text-shadow: 0 14px 32px rgba(0, 0, 0, 0.52);
@@ -161,11 +163,11 @@ a {
 
 .headline-subtitle {
   color: #9dd8ff;
-  font-size: clamp(0.92rem, 1.75vw, 1.38rem);
+  font-size: clamp(0.86rem, 1.6vw, 1.25rem);
   font-weight: 950;
   letter-spacing: 0.02em;
   line-height: 1.08;
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   max-width: 650px;
   text-transform: uppercase;
 }
@@ -183,10 +185,10 @@ a {
 .headline-block small {
   color: #ffffff;
   display: block;
-  font-size: clamp(0.92rem, 1.5vw, 1.18rem);
+  font-size: clamp(0.84rem, 1.35vw, 1.05rem);
   font-weight: 850;
   letter-spacing: 0.08em;
-  margin-top: 14px;
+  margin-top: 10px;
   text-transform: uppercase;
 }
 
@@ -196,7 +198,7 @@ a {
   border-radius: 8px;
   box-shadow: 0 26px 90px rgba(0, 0, 0, 0.38);
   max-width: 460px;
-  padding: clamp(16px, 2.4vw, 26px);
+  padding: clamp(14px, 2vw, 22px);
   position: relative;
   z-index: 5;
 }
@@ -214,7 +216,7 @@ a {
 }
 
 .thanks-page .landing-layout {
-  padding-top: clamp(70px, 8vh, 92px);
+  padding-top: clamp(86px, 10vh, 108px);
 }
 
 .thanks-page .headline-block {
@@ -222,11 +224,11 @@ a {
 }
 
 .thanks-page .headline-block h1 {
-  font-size: clamp(2.1rem, 4.6vw, 4rem);
+  font-size: clamp(1.9rem, 4.1vw, 3.55rem);
 }
 
 .thanks-page .headline-block h1 em {
-  font-size: clamp(1.9rem, 4.4vw, 3.8rem);
+  font-size: clamp(1.75rem, 3.9vw, 3.35rem);
 }
 
 .thanks-page .person-slot {
@@ -275,7 +277,7 @@ h2 {
   font-size: clamp(0.96rem, 1.3vw, 1.08rem);
   font-weight: 650;
   line-height: 1.45;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .cta-button {
@@ -287,8 +289,8 @@ h2 {
   font-weight: 950;
   gap: 12px;
   justify-content: center;
-  min-height: 60px;
-  padding: 15px 26px;
+  min-height: 56px;
+  padding: 14px 24px;
   text-transform: uppercase;
   transition:
     transform 0.2s ease,
@@ -439,33 +441,37 @@ h2 {
 
   .logo-exit {
     left: 22px;
-    top: 14px;
+    top: 12px;
   }
 
   .logo-exit img {
-    height: 58px;
+    height: 54px;
   }
 
   .landing-layout {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 14px;
     min-height: 100svh;
-    padding: 82px 14px 16px;
+    padding: 72px 14px 14px;
+  }
+
+  .thanks-page .landing-layout {
+    padding-top: 82px;
   }
 
   .person-slot {
     background: radial-gradient(ellipse at 50% 85%, rgba(2, 15, 59, 0.36), transparent 58%);
     display: flex;
     flex: 0 0 auto;
-    height: clamp(180px, 36vh, 320px);
+    height: clamp(150px, 30vh, 260px);
     justify-content: center;
     order: 2;
     width: 100%;
   }
 
   .thanks-page .person-slot {
-    height: clamp(150px, 30vh, 260px);
+    height: clamp(130px, 24vh, 220px);
   }
 
   .cta-panel {
@@ -482,15 +488,15 @@ h2 {
   }
 
   .headline-block h1 {
-    font-size: clamp(1.95rem, 8.8vw, 3rem);
+    font-size: clamp(1.78rem, 8vw, 2.7rem);
   }
 
   .headline-block h1 em {
-    font-size: clamp(1.05rem, 5vw, 1.65rem);
+    font-size: clamp(0.98rem, 4.5vw, 1.5rem);
   }
 
   .headline-block strong {
-    font-size: clamp(0.9rem, 3.5vw, 1.15rem);
+    font-size: clamp(0.82rem, 3.2vw, 1.05rem);
   }
 
   h2 {
@@ -503,7 +509,7 @@ h2 {
   }
 
   .cta-button {
-    min-height: 58px;
+    min-height: 54px;
     padding: 15px 20px;
   }
 }
@@ -515,29 +521,33 @@ h2 {
 
   .logo-exit {
     left: 18px;
-    top: 12px;
+    top: 10px;
   }
 
   .logo-exit img {
-    height: 52px;
+    height: 48px;
   }
 
   .landing-layout {
-    padding-top: 74px;
+    padding-top: 64px;
+  }
+
+  .thanks-page .landing-layout {
+    padding-top: 72px;
   }
 
   .person-slot {
-    height: clamp(150px, 30vh, 240px);
+    height: clamp(126px, 24vh, 210px);
   }
 }
 
 @media (max-height: 640px) and (min-width: 901px) {
   .logo-exit {
-    top: 12px;
+    top: 8px;
   }
 
   .landing-layout {
-    padding-top: 62px;
+    padding-top: 54px;
   }
 
   .cta-panel {
@@ -546,7 +556,7 @@ h2 {
   }
 
   .headline-block h1 {
-    font-size: clamp(1.9rem, 4.2vw, 3.25rem);
+    font-size: clamp(1.75rem, 3.8vw, 2.95rem);
   }
 
   .headline-block h1 em,

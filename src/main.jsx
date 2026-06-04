@@ -124,10 +124,10 @@ function RegistrationLanding() {
         <section className="headline-block" aria-label="Frase principal">
           <h1>
             Las primeras
-            <span> horas de tu bebe:</span>
-            <em>que es normal, que debe preocuparte y como cuidarlo</em>
+            <span> horas de tu bebé:</span>
+            <em>qué es normal, qué debe preocuparte y cómo cuidarlo</em>
           </h1>
-          <p className="headline-subtitle">Guia practica para el primer mes de vida de su bebe</p>
+          <p className="headline-subtitle">Guía práctica para el primer mes de vida de su bebé</p>
           <strong>Curso gratuito 100% en linea</strong>
           <small>24 de junio - 12:00 (hora CDMX)</small>
         </section>
@@ -136,7 +136,7 @@ function RegistrationLanding() {
           <p className="eyebrow">Registro</p>
           <h2>Reserva tu acceso gratuito</h2>
           <p>
-            Deja tus datos para recibir la guia y los siguientes pasos del curso.
+            Deja tus datos para recibir la guía y los siguientes pasos del curso.
           </p>
           <button className="cta-button register-button" type="button" onClick={() => setIsModalOpen(true)}>
             <UserPlus aria-hidden="true" />
@@ -183,8 +183,8 @@ function ThanksLanding() {
           </div>
           <h1>Ya casi terminas el proceso.</h1>
           <p>
-            El ultimo paso obligatorio es unirte al grupo de WhatsApp. Ahi recibiras
-            avisos, instrucciones y acceso al material cuando este disponible.
+            El último paso obligatorio es unirte al grupo de WhatsApp. Ahí recibirás
+            avisos, instrucciones y acceso al material cuando esté disponible.
           </p>
           <a className="cta-button whatsapp-button" href={whatsappGroupUrl} target="_blank" rel="noreferrer">
             <MessageCircle aria-hidden="true" />
