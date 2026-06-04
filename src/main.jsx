@@ -123,11 +123,13 @@ function RegistrationLanding() {
       <div className="landing-layout">
         <section className="headline-block" aria-label="Frase principal">
           <h1>
-            Nace un bebe,
-            <span> nacen tambien</span>
-            <em>unos padres</em>
+            Las primeras
+            <span> horas de tu bebe:</span>
+            <em>que es normal, que debe preocuparte y como cuidarlo</em>
           </h1>
+          <p className="headline-subtitle">Guia practica para el primer mes de vida de su bebe</p>
           <strong>Curso gratuito 100% en linea</strong>
+          <small>24 de junio - 12:00 (hora CDMX)</small>
         </section>
         <PersonSlot />
         <section className="cta-panel register-panel" aria-label="Registro">
@@ -164,6 +166,7 @@ function ThanksLanding() {
             <span> esta casi</span>
             <em>completo</em>
           </h1>
+          <p className="headline-subtitle">Ultimo paso obligatorio</p>
           <strong>Unete al grupo para recibir el acceso</strong>
         </section>
         <PersonSlot />
