@@ -13,6 +13,10 @@
       "destination": "/apple-touch-icon.png"
     },
     {
+      "source": "/papa-primerizo/doclevel-logo.png",
+      "destination": "/doclevel-logo.png"
+    },
+    {
       "source": "/papa-primerizo/:path*",
       "destination": "/index.html"
     },
