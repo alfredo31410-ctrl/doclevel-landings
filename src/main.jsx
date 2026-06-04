@@ -59,7 +59,12 @@ function ActiveCampaignModal({ isOpen, onClose }) {
         return Boolean(text) && window.getComputedStyle(node).display !== "none";
       });
 
-      if (successMessage) goToThanks();
+      if (successMessage){
+        if (window.fbq) {
+          fbq('track', 'CompleteRegistration');
+        }
+        goToThanks();
+      } 
     });
 
     document.addEventListener("click", handleClick, true);
