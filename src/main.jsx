@@ -95,7 +95,9 @@ function LogoExit() {
       className="logo-exit"
       href="https://www.doclevelacademy.com/"
       aria-label="Volver a la pagina principal de DocLevel"
-    />
+    >
+      <img src="/papa-primerizo/doclevel-logo.png" alt="DocLevel" />
+    </a>
   );
 }
 
@@ -114,27 +116,29 @@ function RegistrationLanding() {
   return (
     <main className="landing-page register-page">
       <LogoExit />
-      <PersonSlot />
-      <section className="headline-block" aria-label="Frase principal">
-        <p>Guia practica para el primer mes de vida de tu bebe</p>
-        <h1>
-          Nace un bebe,
-          <span> nacen tambien</span>
-          unos padres
-        </h1>
-        <strong>Curso gratuito 100% en linea</strong>
-      </section>
-      <section className="cta-panel register-panel" aria-label="Registro">
-        <p className="eyebrow">Registro</p>
-        <h2>Reserva tu acceso gratuito</h2>
-        <p>
-          Deja tus datos para recibir la guia y los siguientes pasos del curso.
-        </p>
-        <button className="cta-button register-button" type="button" onClick={() => setIsModalOpen(true)}>
-          <UserPlus aria-hidden="true" />
-          Registrarme ahora
-        </button>
-      </section>
+      <div className="landing-layout">
+        <section className="headline-block" aria-label="Frase principal">
+          <p>Guia practica para el primer mes de vida de tu bebe</p>
+          <h1>
+            Nace un bebe,
+            <span> nacen tambien</span>
+            <em>unos padres</em>
+          </h1>
+          <strong>Curso gratuito 100% en linea</strong>
+        </section>
+        <PersonSlot />
+        <section className="cta-panel register-panel" aria-label="Registro">
+          <p className="eyebrow">Registro</p>
+          <h2>Reserva tu acceso gratuito</h2>
+          <p>
+            Deja tus datos para recibir la guia y los siguientes pasos del curso.
+          </p>
+          <button className="cta-button register-button" type="button" onClick={() => setIsModalOpen(true)}>
+            <UserPlus aria-hidden="true" />
+            Registrarme ahora
+          </button>
+        </section>
+      </div>
 
       <ActiveCampaignModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </main>
@@ -145,37 +149,39 @@ function ThanksLanding() {
   return (
     <main className="landing-page thanks-page">
       <LogoExit />
-      <PersonSlot />
-      <section className="headline-block thanks-headline" aria-label="Frase principal">
-        <p>Ultimo paso obligatorio</p>
-        <h1>
-          Tu registro
-          <span> esta casi</span>
-          completo
-        </h1>
-        <strong>Unete al grupo para recibir el acceso</strong>
-      </section>
-      <section className="cta-panel thanks-panel" aria-label="Gracias">
-        <p className="eyebrow">Falta poco</p>
-        <div className="progress-card" aria-label="Progreso del registro">
-          <div className="progress-label">
-            <span>Proceso de registro</span>
-            <strong>80%</strong>
+      <div className="landing-layout">
+        <section className="headline-block thanks-headline" aria-label="Frase principal">
+          <p>Ultimo paso obligatorio</p>
+          <h1>
+            Tu registro
+            <span> esta casi</span>
+            <em>completo</em>
+          </h1>
+          <strong>Unete al grupo para recibir el acceso</strong>
+        </section>
+        <PersonSlot />
+        <section className="cta-panel thanks-panel" aria-label="Gracias">
+          <p className="eyebrow">Falta poco</p>
+          <div className="progress-card" aria-label="Progreso del registro">
+            <div className="progress-label">
+              <span>Proceso de registro</span>
+              <strong>80%</strong>
+            </div>
+            <div className="progress-track">
+              <span className="progress-fill"></span>
+            </div>
           </div>
-          <div className="progress-track">
-            <span className="progress-fill"></span>
-          </div>
-        </div>
-        <h1>Ya casi terminas el proceso.</h1>
-        <p>
-          El ultimo paso obligatorio es unirte al grupo de WhatsApp. Ahi recibiras
-          avisos, instrucciones y acceso al material cuando este disponible.
-        </p>
-        <a className="cta-button whatsapp-button" href={whatsappGroupUrl} target="_blank" rel="noreferrer">
-          <MessageCircle aria-hidden="true" />
-          Unirme al grupo
-        </a>
-      </section>
+          <h1>Ya casi terminas el proceso.</h1>
+          <p>
+            El ultimo paso obligatorio es unirte al grupo de WhatsApp. Ahi recibiras
+            avisos, instrucciones y acceso al material cuando este disponible.
+          </p>
+          <a className="cta-button whatsapp-button" href={whatsappGroupUrl} target="_blank" rel="noreferrer">
+            <MessageCircle aria-hidden="true" />
+            Unirme al grupo
+          </a>
+        </section>
+      </div>
     </main>
   );
 }
