@@ -17,6 +17,10 @@
       "destination": "/doclevel-logo.png"
     },
     {
+      "source": "/papa-primerizo/doctor-papa-primerizo.png",
+      "destination": "/doctor-papa-primerizo.png"
+    },
+    {
       "source": "/papa-primerizo/:path*",
       "destination": "/index.html"
     },

@@ -108,9 +108,8 @@ function LogoExit() {
 
 function PersonSlot() {
   return (
-    <div className="person-slot" aria-label="Espacio reservado para imagen de la persona">
-      <span>Imagen pendiente</span>
-      <strong>Persona / doctor</strong>
+    <div className="person-slot" aria-label="Doctor del curso">
+      <img src="/papa-primerizo/doctor-papa-primerizo.png" alt="Doctor del curso" />
     </div>
   );
 }
@@ -151,8 +150,8 @@ function RegistrationLanding() {
 
 function ThanksLanding() {
   useEffect(() => {
-    if (window.fbq) {
-      fbq('track', 'CompleteRegistration');
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", "CompleteRegistration");
     }
   }, []);
   return (
