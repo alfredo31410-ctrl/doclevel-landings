@@ -67,13 +67,13 @@ a {
   height: auto;
   left: clamp(32px, 5.5vw, 72px);
   position: absolute;
-  top: clamp(30px, 6vw, 76px);
+  top: clamp(18px, 3.4vw, 42px);
   z-index: 8;
 }
 
 .logo-exit img {
   display: block;
-  height: clamp(58px, 8vw, 94px);
+  height: clamp(54px, 7vw, 82px);
   object-fit: contain;
   width: auto;
 }
@@ -86,7 +86,7 @@ a {
   margin: 0 auto;
   max-width: 1440px;
   min-height: 100dvh;
-  padding: clamp(138px, 20vh, 188px) clamp(28px, 5.5vw, 72px) clamp(28px, 5vh, 54px);
+  padding: clamp(92px, 13vh, 128px) clamp(28px, 5.5vw, 72px) clamp(22px, 4vh, 44px);
   position: relative;
   z-index: 4;
 }
@@ -137,28 +137,13 @@ a {
   z-index: 5;
 }
 
-.headline-block p {
-  background: rgba(255, 255, 255, 0.42);
-  border-radius: 8px;
-  color: #06103a;
-  display: inline-block;
-  font-size: clamp(1rem, 2.1vw, 1.55rem);
-  font-weight: 950;
-  letter-spacing: 0.02em;
-  line-height: 1.02;
-  margin: 0 0 12px;
-  padding: 8px 12px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
-  text-transform: uppercase;
-}
-
 .headline-block h1 {
   color: #020202;
   font-size: clamp(2.55rem, 5.7vw, 4.85rem);
   font-weight: 950;
   letter-spacing: 0;
   line-height: 0.94;
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   max-width: 720px;
   text-shadow: 0 12px 28px rgba(255, 255, 255, 0.28);
 }
@@ -192,7 +177,7 @@ a {
   border-radius: 8px;
   box-shadow: 0 26px 90px rgba(0, 0, 0, 0.38);
   max-width: 480px;
-  padding: clamp(18px, 3vw, 30px);
+  padding: clamp(16px, 2.4vw, 26px);
   position: relative;
   z-index: 5;
 }
@@ -259,8 +244,8 @@ h2 {
   font-weight: 950;
   gap: 12px;
   justify-content: center;
-  min-height: 64px;
-  padding: 17px 28px;
+  min-height: 60px;
+  padding: 15px 26px;
   text-transform: uppercase;
   transition:
     transform 0.2s ease,
@@ -411,11 +396,11 @@ h2 {
 
   .logo-exit {
     left: 22px;
-    top: 24px;
+    top: 18px;
   }
 
   .logo-exit img {
-    height: 72px;
+    height: 62px;
   }
 
   .landing-layout {
@@ -423,7 +408,7 @@ h2 {
     flex-direction: column;
     gap: 20px;
     min-height: 100svh;
-    padding: 132px 14px 20px;
+    padding: 94px 14px 18px;
   }
 
   .person-slot {
@@ -443,10 +428,6 @@ h2 {
 
   .headline-block h1 {
     font-size: clamp(2.15rem, 9.8vw, 3.35rem);
-  }
-
-  .headline-block p {
-    font-size: clamp(0.86rem, 3.5vw, 1.1rem);
   }
 
   .headline-block strong {
@@ -475,25 +456,25 @@ h2 {
 
   .logo-exit {
     left: 18px;
-    top: 24px;
+    top: 18px;
   }
 
   .logo-exit img {
-    height: 64px;
+    height: 56px;
   }
 
   .landing-layout {
-    padding-top: 118px;
+    padding-top: 84px;
   }
 }
 
 @media (max-height: 640px) and (min-width: 901px) {
   .logo-exit {
-    top: 24px;
+    top: 16px;
   }
 
   .landing-layout {
-    padding-top: 108px;
+    padding-top: 78px;
   }
 
   .cta-panel {
@@ -503,10 +484,6 @@ h2 {
 
   .headline-block h1 {
     font-size: clamp(2.05rem, 4.7vw, 3.55rem);
-  }
-
-  .headline-block p {
-    font-size: clamp(0.88rem, 1.6vw, 1.15rem);
   }
 
   .headline-block strong {

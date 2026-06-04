@@ -118,7 +118,6 @@ function RegistrationLanding() {
       <LogoExit />
       <div className="landing-layout">
         <section className="headline-block" aria-label="Frase principal">
-          <p>Guia practica para el primer mes de vida de tu bebe</p>
           <h1>
             Nace un bebe,
             <span> nacen tambien</span>
@@ -151,7 +150,6 @@ function ThanksLanding() {
       <LogoExit />
       <div className="landing-layout">
         <section className="headline-block thanks-headline" aria-label="Frase principal">
-          <p>Ultimo paso obligatorio</p>
           <h1>
             Tu registro
             <span> esta casi</span>
