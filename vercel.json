@@ -5,6 +5,14 @@
       "destination": "/assets/:path*"
     },
     {
+      "source": "/papa-primerizo/favicon.png",
+      "destination": "/favicon.png"
+    },
+    {
+      "source": "/papa-primerizo/apple-touch-icon.png",
+      "destination": "/apple-touch-icon.png"
+    },
+    {
       "source": "/papa-primerizo/:path*",
       "destination": "/index.html"
     },
