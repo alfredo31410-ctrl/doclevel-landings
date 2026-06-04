@@ -118,12 +118,20 @@ function RegistrationLanding() {
     <main className="landing-page register-page">
       <LogoExit />
       <PersonSlot />
+      <section className="headline-block" aria-label="Frase principal">
+        <p>Guia practica para el primer mes de vida de tu bebe</p>
+        <h1>
+          Nace un bebe,
+          <span> nacen tambien</span>
+          unos padres
+        </h1>
+        <strong>Curso gratuito 100% en linea</strong>
+      </section>
       <section className="cta-panel register-panel" aria-label="Registro">
-        <p className="eyebrow">Curso gratuito 100% en linea</p>
-        <h1>Nace un bebe, nacen tambien unos padres</h1>
+        <p className="eyebrow">Registro</p>
+        <h2>Reserva tu acceso gratuito</h2>
         <p>
-          Guia practica para el primer mes de vida de tu bebe. Registrate para recibir
-          el acceso y los siguientes pasos.
+          Deja tus datos para recibir la guia y los siguientes pasos del curso.
         </p>
         <button className="cta-button register-button" type="button" onClick={() => setIsModalOpen(true)}>
           <UserPlus aria-hidden="true" />
@@ -141,6 +149,15 @@ function ThanksLanding() {
     <main className="landing-page thanks-page">
       <LogoExit />
       <PersonSlot />
+      <section className="headline-block thanks-headline" aria-label="Frase principal">
+        <p>Ultimo paso obligatorio</p>
+        <h1>
+          Tu registro
+          <span> esta casi</span>
+          completo
+        </h1>
+        <strong>Unete al grupo para recibir el acceso</strong>
+      </section>
       <section className="cta-panel thanks-panel" aria-label="Gracias">
         <p className="eyebrow">Falta poco</p>
         <div className="progress-card" aria-label="Progreso del registro">

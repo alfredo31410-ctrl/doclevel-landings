@@ -108,6 +108,49 @@ a {
   line-height: 1;
 }
 
+.headline-block {
+  left: clamp(28px, 5.5vw, 72px);
+  max-width: min(57vw, 760px);
+  position: absolute;
+  top: clamp(165px, 22vh, 230px);
+  z-index: 5;
+}
+
+.headline-block p {
+  color: #9dd8ff;
+  font-size: clamp(1rem, 2.1vw, 1.55rem);
+  font-weight: 950;
+  letter-spacing: 0.02em;
+  line-height: 1.02;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+.headline-block h1 {
+  color: #ffffff;
+  font-size: clamp(2.8rem, 6.5vw, 5.4rem);
+  font-weight: 950;
+  letter-spacing: 0;
+  line-height: 0.94;
+  margin: 0 0 14px;
+  max-width: 720px;
+  text-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
+}
+
+.headline-block h1 span {
+  color: #15a9ff;
+  display: block;
+}
+
+.headline-block strong {
+  color: #ffffff;
+  display: block;
+  font-size: clamp(1.05rem, 2vw, 1.6rem);
+  font-weight: 950;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
 .cta-panel {
   background: rgba(2, 15, 59, 0.72);
   border: 1px solid rgba(139, 207, 255, 0.22);
@@ -144,17 +187,13 @@ p {
   margin-top: 0;
 }
 
-h1 {
+h2 {
   color: #ffffff;
-  font-size: clamp(1.9rem, 4.3vw, 3.65rem);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 950;
   letter-spacing: 0;
-  line-height: 0.96;
+  line-height: 1;
   margin-bottom: 12px;
-}
-
-.register-panel h1 {
-  max-width: 480px;
 }
 
 .cta-panel p {
@@ -346,8 +385,26 @@ h1 {
     width: calc(100% - 28px);
   }
 
-  h1 {
-    font-size: clamp(1.7rem, 9vw, 2.8rem);
+  .headline-block {
+    left: 18px;
+    max-width: calc(100% - 36px);
+    top: 128px;
+  }
+
+  .headline-block h1 {
+    font-size: clamp(2.2rem, 10.5vw, 3.6rem);
+  }
+
+  .headline-block p {
+    font-size: clamp(0.86rem, 3.5vw, 1.1rem);
+  }
+
+  .headline-block strong {
+    font-size: clamp(0.9rem, 3.5vw, 1.15rem);
+  }
+
+  h2 {
+    font-size: clamp(1.35rem, 7vw, 2rem);
   }
 
   .cta-panel p {
@@ -370,6 +427,10 @@ h1 {
     display: none;
   }
 
+  .headline-block {
+    top: 120px;
+  }
+
   .logo-exit {
     left: 18px;
     top: 24px;
@@ -386,8 +447,16 @@ h1 {
     padding: 18px 22px;
   }
 
-  h1 {
-    font-size: clamp(1.85rem, 3.8vw, 3rem);
+  .headline-block {
+    top: 116px;
+  }
+
+  .headline-block h1 {
+    font-size: clamp(2.2rem, 5.3vw, 3.9rem);
+  }
+
+  h2 {
+    font-size: clamp(1.35rem, 2.8vw, 1.9rem);
   }
 
   .cta-button {
