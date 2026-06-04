@@ -17,10 +17,6 @@
       "destination": "/doclevel-logo.png"
     },
     {
-      "source": "/papa-primerizo/papa-primerizo-banner.jpeg",
-      "destination": "/papa-primerizo-banner.jpeg"
-    },
-    {
       "source": "/papa-primerizo/:path*",
       "destination": "/index.html"
     },
