@@ -4,7 +4,7 @@ import { MessageCircle, UserPlus, X } from "lucide-react";
 import "./styles.css";
 
 const whatsappGroupUrl =
-  import.meta.env.VITE_WHATSAPP_GROUP_URL || "https://chat.whatsapp.com/REEMPLAZAR_ENLACE";
+  import.meta.env.VITE_WHATSAPP_GROUP_URL || "https://chat.whatsapp.com/C6A7e7xUM1EFtiMSWctmIH";
 const landingBasePath = "/papa-primerizo";
 const canonicalThanksUrl = "https://www.doclevelacademy.com/papa-primerizo/gracias";
 

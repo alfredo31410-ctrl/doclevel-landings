@@ -216,7 +216,7 @@ a {
 }
 
 .thanks-page .landing-layout {
-  padding-top: clamp(86px, 10vh, 108px);
+  padding-top: clamp(76px, 8.5vh, 94px);
 }
 
 .thanks-page .headline-block {
@@ -224,19 +224,19 @@ a {
 }
 
 .thanks-page .headline-block h1 {
-  font-size: clamp(1.9rem, 4.1vw, 3.55rem);
+  font-size: clamp(1.78rem, 3.8vw, 3.28rem);
 }
 
 .thanks-page .headline-block h1 em {
-  font-size: clamp(1.75rem, 3.9vw, 3.35rem);
+  font-size: clamp(1.6rem, 3.55vw, 3rem);
 }
 
 .thanks-page .person-slot {
-  height: min(68vh, 620px);
+  height: min(64vh, 590px);
 }
 
 .thanks-page .cta-panel {
-  padding: clamp(14px, 2vw, 22px);
+  padding: clamp(12px, 1.8vw, 20px);
 }
 
 .eyebrow {
@@ -457,7 +457,7 @@ h2 {
   }
 
   .thanks-page .landing-layout {
-    padding-top: 82px;
+    padding-top: 76px;
   }
 
   .person-slot {
@@ -471,7 +471,7 @@ h2 {
   }
 
   .thanks-page .person-slot {
-    height: clamp(130px, 24vh, 220px);
+    height: clamp(118px, 22vh, 200px);
   }
 
   .cta-panel {
