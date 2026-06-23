@@ -1,27 +1,27 @@
 {
   "rewrites": [
     {
-      "source": "/papa-primerizo/assets/:path*",
+      "source": "/landings/papa-primerizo/assets/:path*",
       "destination": "/assets/:path*"
     },
     {
-      "source": "/papa-primerizo/favicon.png",
+      "source": "/landings/papa-primerizo/favicon.png",
       "destination": "/favicon.png"
     },
     {
-      "source": "/papa-primerizo/apple-touch-icon.png",
+      "source": "/landings/papa-primerizo/apple-touch-icon.png",
       "destination": "/apple-touch-icon.png"
     },
     {
-      "source": "/papa-primerizo/doclevel-logo.png",
+      "source": "/landings/papa-primerizo/doclevel-logo.png",
       "destination": "/doclevel-logo.png"
     },
     {
-      "source": "/papa-primerizo/doctor-papa-primerizo.png",
+      "source": "/landings/papa-primerizo/doctor-papa-primerizo.png",
       "destination": "/doctor-papa-primerizo.png"
     },
     {
-      "source": "/papa-primerizo/:path*",
+      "source": "/landings/papa-primerizo/:path*",
       "destination": "/index.html"
     },
     {

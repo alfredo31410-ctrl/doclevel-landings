@@ -2,8 +2,8 @@
 
 Landings iniciales para el flujo de papas primerizos:
 
-- `/papa-primerizo`: pagina de registro de una sola pantalla, con modal para ActiveCampaign.
-- `/papa-primerizo/gracias`: pagina de agradecimiento con boton obligatorio al grupo de WhatsApp.
+- `/landings/papa-primerizo`: pagina de registro de una sola pantalla, con modal para ActiveCampaign.
+- `/landings/papa-primerizo/gracias`: pagina de agradecimiento con boton obligatorio al grupo de WhatsApp.
 
 Tambien siguen funcionando las rutas internas de la app de landings:
 
@@ -25,7 +25,7 @@ El formulario oficial de ActiveCampaign ya esta integrado:
 En ActiveCampaign, el formulario `227` debe tener como URL de gracias:
 
 ```txt
-https://www.doclevelacademy.com/papa-primerizo/gracias
+https://www.doclevelacademy.com/landings/papa-primerizo/gracias
 ```
 
 Si el formulario esta configurado con una URL de Cressara, ActiveCampaign puede redirigir fuera de esta app aunque el codigo local este correcto.
@@ -38,11 +38,11 @@ En el repo `alfredo31410-ctrl/DocLevel`, agrega o ajusta `vercel.json` para que 
 {
   "rewrites": [
     {
-      "source": "/papa-primerizo",
+      "source": "/landings/papa-primerizo",
       "destination": "https://doclevel-landings.vercel.app"
     },
     {
-      "source": "/papa-primerizo/:path*",
+      "source": "/landings/papa-primerizo/:path*",
       "destination": "https://doclevel-landings.vercel.app/:path*"
     }
   ]

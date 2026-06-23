@@ -5,8 +5,8 @@ import "./styles.css";
 
 const whatsappGroupUrl =
   import.meta.env.VITE_WHATSAPP_GROUP_URL || "https://chat.whatsapp.com/C6A7e7xUM1EFtiMSWctmIH";
-const landingBasePath = "/papa-primerizo";
-const canonicalThanksUrl = "https://www.doclevelacademy.com/papa-primerizo/gracias";
+const landingBasePath = "/landings/papa-primerizo";
+const canonicalThanksUrl = "https://www.doclevelacademy.com/landings/papa-primerizo/gracias";
 
 function getLandingHomePath() {
   return window.location.pathname.toLowerCase().startsWith(landingBasePath)
@@ -101,7 +101,7 @@ function LogoExit() {
       href="https://www.doclevelacademy.com/"
       aria-label="Volver a la pagina principal de DocLevel"
     >
-      <img src="/papa-primerizo/doclevel-logo.png" alt="DocLevel" />
+      <img src="/landings/papa-primerizo/doclevel-logo.png" alt="DocLevel" />
     </a>
   );
 }
@@ -109,7 +109,7 @@ function LogoExit() {
 function PersonSlot() {
   return (
     <div className="person-slot" aria-label="Doctor del curso">
-      <img src="/papa-primerizo/doctor-papa-primerizo.png" alt="Doctor del curso" />
+      <img src="/landings/papa-primerizo/doctor-papa-primerizo.png" alt="Doctor del curso" />
     </div>
   );
 }
