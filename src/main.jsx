@@ -99,7 +99,7 @@ function LogoExit() {
     <a
       className="logo-exit"
       href="https://www.doclevelacademy.com/"
-      aria-label="Volver a la pagina principal de DocLevel"
+      aria-label="Volver a la página principal de DocLevel"
     >
       <img src="/landings/papa-primerizo/doclevel-logo.png" alt="DocLevel" />
     </a>
@@ -128,7 +128,7 @@ function RegistrationLanding() {
             <em>qué es normal, qué debe preocuparte y cómo cuidarlo</em>
           </h1>
           <p className="headline-subtitle">Guía práctica para el primer mes de vida de su bebé</p>
-          <strong>Curso gratuito 100% en linea</strong>
+          <strong>Curso gratuito 100% en línea</strong>
           <small>24 de junio - 12:00 (hora CDMX)</small>
         </section>
         <PersonSlot />
@@ -163,11 +163,11 @@ function ThanksLanding() {
         <section className="headline-block thanks-headline" aria-label="Frase principal">
           <h1>
             Tu registro
-            <span> esta casi</span>
+            <span> está casi</span>
             <em>completo</em>
           </h1>
-          <p className="headline-subtitle">Ultimo paso obligatorio</p>
-          <strong>Unete al grupo para recibir el acceso</strong>
+          <p className="headline-subtitle">Último paso obligatorio</p>
+          <strong>Únete al grupo para recibir el acceso</strong>
         </section>
         <PersonSlot />
         <section className="cta-panel thanks-panel" aria-label="Gracias">
