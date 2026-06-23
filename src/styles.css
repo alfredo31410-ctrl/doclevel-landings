@@ -509,7 +509,7 @@ h2,
   .person-slot {
     background: linear-gradient(0deg, rgba(1, 10, 45, 0.34), transparent 58%);
     flex: 0 0 auto;
-    height: clamp(180px, 27svh, 280px);
+    height: clamp(230px, 34svh, 340px);
     margin: -2px auto -12px;
     max-width: 100%;
     order: 3;
@@ -519,7 +519,7 @@ h2,
   .thanks-page .person-slot {
     background: linear-gradient(0deg, rgba(1, 10, 45, 0.34), transparent 58%);
     flex: 0 0 auto;
-    height: clamp(150px, 23svh, 230px);
+    height: clamp(205px, 30svh, 300px);
     margin: -2px auto -10px;
     max-width: 100%;
     order: 3;
@@ -532,8 +532,9 @@ h2,
   }
 
   .person-slot img {
-    max-width: 112%;
-    transform: translateX(0);
+    max-width: 126%;
+    transform: translateX(0) scale(1.12);
+    transform-origin: bottom center;
   }
 
   .cta-panel {
@@ -571,12 +572,12 @@ h2,
   }
 
   .person-slot {
-    height: clamp(155px, 24svh, 220px);
+    height: clamp(205px, 31svh, 290px);
     margin-bottom: -10px;
   }
 
   .thanks-page .person-slot {
-    height: clamp(130px, 20svh, 190px);
+    height: clamp(180px, 27svh, 250px);
   }
 
   .cta-panel {
