@@ -478,32 +478,58 @@ h2,
   .headline-block {
     max-width: 100%;
     order: 1;
+    padding-top: 2px;
     width: 100%;
   }
 
   .headline-block h1 {
-    font-size: clamp(1.82rem, 8.8vw, 3rem);
-    margin-bottom: 6px;
+    font-size: clamp(1.72rem, 7.9vw, 2.72rem);
+    line-height: 0.98;
+    margin-bottom: 8px;
+    max-width: min(100%, 18ch);
+    text-wrap: balance;
+  }
+
+  .headline-block h1 span {
+    font-size: 0.95em;
+    line-height: 0.98;
   }
 
   .headline-block h1 em {
-    font-size: clamp(0.96rem, 4.2vw, 1.42rem);
-    max-width: 100%;
+    font-size: clamp(0.88rem, 3.55vw, 1.18rem);
+    line-height: 1.12;
+    margin-top: 4px;
+    max-width: min(100%, 30ch);
+    text-wrap: balance;
+  }
+
+  .thanks-page .headline-block h1 {
+    max-width: 12ch;
+  }
+
+  .thanks-page .headline-block h1 em {
+    font-size: 0.9em;
+    margin-top: 0;
   }
 
   .headline-subtitle {
-    font-size: clamp(0.72rem, 2.8vw, 0.92rem);
-    margin-bottom: 6px;
+    font-size: clamp(0.68rem, 2.45vw, 0.82rem);
+    letter-spacing: 0.015em;
+    line-height: 1.16;
+    margin-bottom: 8px;
+    max-width: 34ch;
   }
 
   .headline-block strong {
-    font-size: clamp(0.74rem, 3vw, 0.94rem);
+    font-size: clamp(0.68rem, 2.55vw, 0.84rem);
+    line-height: 1.14;
     padding: 7px 11px;
   }
 
   .headline-block small {
-    font-size: clamp(0.68rem, 2.6vw, 0.84rem);
-    margin-top: 6px;
+    font-size: clamp(0.64rem, 2.28vw, 0.78rem);
+    letter-spacing: 0.055em;
+    margin-top: 7px;
   }
 
   .person-slot {
@@ -568,7 +594,7 @@ h2,
   }
 
   .headline-block h1 {
-    font-size: clamp(1.68rem, 8.8vw, 2.48rem);
+    font-size: clamp(1.48rem, 7.8vw, 2.18rem);
   }
 
   .person-slot {
