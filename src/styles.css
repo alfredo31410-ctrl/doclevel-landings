@@ -652,3 +652,1043 @@ h2,
     min-height: 54px;
   }
 }
+
+/* =========================================================
+   PÁGINA DE GRACIAS — MÉDICOS DOCENTES
+   Se agrega al FINAL de styles.css
+   ========================================================= */
+
+.medicos-thanks-page {
+  min-height: 100svh;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 14% 14%,
+      rgba(255, 255, 255, 0.22),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 84% 16%,
+      rgba(40, 174, 255, 0.22),
+      transparent 29%
+    ),
+    radial-gradient(
+      circle at 60% 105%,
+      rgba(27, 208, 126, 0.13),
+      transparent 34%
+    ),
+    linear-gradient(118deg, #172f70 0%, #17477d 45%, #061d61 100%);
+}
+
+.medicos-thanks-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      104deg,
+      transparent 0 38%,
+      rgba(255, 255, 255, 0.11) 49%,
+      transparent 61%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0, 10, 48, 0.56) 0%,
+      rgba(0, 10, 48, 0.1) 55%,
+      transparent 80%
+    );
+}
+
+.medicos-thanks-page::after {
+  content: "";
+  position: absolute;
+  right: -180px;
+  bottom: -200px;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(70, 201, 255, 0.18),
+    rgba(70, 201, 255, 0) 68%
+  );
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.medicos-thanks-layout {
+  position: relative;
+  z-index: 5;
+  width: min(1220px, calc(100% - 56px));
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: clamp(112px, 13vh, 146px) 0 clamp(46px, 8vh, 88px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.78fr);
+  gap: clamp(24px, 4vw, 58px);
+  align-items: start;
+}
+
+.medicos-thanks-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  animation: medicosFadeUp 0.75s ease both;
+}
+
+.medicos-thanks-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin: 0;
+  padding: 10px 15px;
+  border: 1px solid rgba(175, 232, 255, 0.32);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e0f8ff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.medicos-thanks-eyebrow svg {
+  color: #55d2ff;
+}
+
+.medicos-thanks-copy h1 {
+  max-width: 790px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(3rem, 6vw, 5.65rem);
+  font-weight: 950;
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+  text-wrap: balance;
+  text-shadow: 0 18px 44px rgba(0, 0, 0, 0.25);
+}
+
+.medicos-thanks-copy h1 span {
+  color: #1eb5ff;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.28),
+    0 16px 38px rgba(2, 29, 88, 0.38);
+}
+
+.medicos-thanks-lead {
+  max-width: 710px;
+  margin: 0;
+  color: rgba(234, 247, 255, 0.93);
+  font-size: clamp(1rem, 1.4vw, 1.14rem);
+  font-weight: 600;
+  line-height: 1.72;
+}
+
+.medicos-thanks-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.medicos-thanks-badges span {
+  padding: 9px 13px;
+  border: 1px solid rgba(172, 232, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f1fbff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+  animation: medicosFloat 4.2s ease-in-out infinite;
+}
+
+.medicos-thanks-badges span:nth-child(2) {
+  animation-delay: 0.35s;
+}
+
+.medicos-thanks-badges span:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+.medicos-thanks-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.medicos-mini-card {
+  position: relative;
+  min-height: 205px;
+  overflow: hidden;
+  padding: 21px 18px;
+  border: 1px solid rgba(181, 234, 255, 0.17);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+  animation: medicosFadeUp 0.8s ease both;
+}
+
+.medicos-mini-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(105, 215, 255, 0.44);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.medicos-mini-card:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.medicos-mini-card:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+.medicos-mini-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0 35%,
+    rgba(255, 255, 255, 0.14) 50%,
+    transparent 65%
+  );
+  transform: translateX(-125%);
+  animation: medicosShimmer 5.5s linear infinite;
+  pointer-events: none;
+}
+
+.medicos-mini-card-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  background: rgba(36, 185, 255, 0.18);
+  color: #c1f2ff;
+}
+
+.medicos-mini-card-content h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.medicos-mini-card-content p {
+  margin: 0;
+  color: rgba(230, 245, 255, 0.88);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.62;
+}
+
+.medicos-thanks-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: medicosFadeUp 0.9s ease both;
+}
+
+.medicos-thanks-panel {
+  position: relative;
+  max-width: none;
+  overflow: hidden;
+  padding: clamp(23px, 3vw, 30px);
+  border: 1px solid rgba(120, 226, 255, 0.25);
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      circle at 92% 5%,
+      rgba(44, 184, 255, 0.18),
+      transparent 36%
+    ),
+    rgba(3, 22, 77, 0.91);
+  box-shadow: 0 28px 74px rgba(0, 0, 0, 0.36);
+}
+
+.medicos-thanks-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    130deg,
+    rgba(255, 255, 255, 0.08),
+    transparent 30%,
+    transparent 70%,
+    rgba(71, 205, 255, 0.08)
+  );
+  pointer-events: none;
+}
+
+.medicos-thanks-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.medicos-thanks-panel h2 {
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: clamp(1.82rem, 3vw, 2.45rem);
+  font-weight: 950;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+}
+
+.medicos-thanks-panel p {
+  margin-bottom: 20px;
+  color: rgba(232, 246, 255, 0.92);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.62;
+}
+
+.medicos-thanks-panel .progress-card {
+  margin-bottom: 0;
+  border-radius: 14px;
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.1);
+}
+
+.medicos-thanks-panel .progress-fill {
+  width: 67%;
+  animation: medicosProgress 1.25s ease both;
+}
+
+.medicos-whatsapp-button {
+  position: relative;
+  min-height: 62px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #26d86b, #14b957);
+  box-shadow:
+    0 0 0 7px rgba(37, 211, 102, 0.13),
+    0 20px 44px rgba(18, 173, 83, 0.34);
+  color: #ffffff;
+  animation: medicosPulseGlow 2.2s ease-in-out infinite;
+}
+
+.medicos-whatsapp-button:hover {
+  transform: translateY(-3px) scale(1.015);
+}
+
+.medicos-whatsapp-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0 35%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 65%
+  );
+  transform: translateX(-130%);
+  animation: medicosShimmer 4.6s linear infinite;
+}
+
+.medicos-whatsapp-button svg,
+.medicos-whatsapp-button span {
+  position: relative;
+  z-index: 1;
+}
+
+.medicos-panel-note {
+  display: block;
+  margin-top: 15px;
+  color: rgba(193, 230, 246, 0.8);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.medicos-visual-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.medicos-step-card {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 20px 18px 24px;
+  border: 1px solid rgba(167, 229, 255, 0.15);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 17px 38px rgba(0, 0, 0, 0.13);
+  animation: medicosFadeUp 0.85s ease both;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.medicos-step-card:hover {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.step-card-1 {
+  animation-delay: 0.12s;
+}
+
+.step-card-2 {
+  animation-delay: 0.25s;
+}
+
+.step-card-3 {
+  animation-delay: 0.38s;
+}
+
+.medicos-step-card::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 0;
+  width: 4px;
+  border-radius: 99px;
+  background: linear-gradient(180deg, #36c9ff, #23d575);
+}
+
+.medicos-step-number {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #96e5ff;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.medicos-step-card h3 {
+  margin: 0 0 7px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.medicos-step-card p {
+  margin: 0;
+  color: rgba(229, 244, 255, 0.85);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+/* Animaciones exclusivas de médicos docentes */
+
+@keyframes medicosFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes medicosFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes medicosPulseGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 7px rgba(37, 211, 102, 0.13),
+      0 20px 44px rgba(18, 173, 83, 0.32);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 12px rgba(37, 211, 102, 0.07),
+      0 24px 50px rgba(18, 173, 83, 0.46);
+  }
+}
+
+@keyframes medicosShimmer {
+  to {
+    transform: translateX(140%);
+  }
+}
+
+@keyframes medicosProgress {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 67%;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 1080px) {
+  .medicos-thanks-layout {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding-top: 104px;
+  }
+
+  .medicos-thanks-copy h1 {
+    max-width: 850px;
+  }
+
+  .medicos-thanks-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .medicos-thanks-sidebar {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.9fr) minmax(290px, 1fr);
+    align-items: start;
+  }
+}
+
+/* Celular */
+
+@media (max-width: 760px) {
+  .medicos-thanks-page {
+    overflow-y: auto;
+  }
+
+  .medicos-thanks-layout {
+    width: min(100% - 28px, 1220px);
+    min-height: auto;
+    padding: 88px 0 48px;
+    gap: 22px;
+  }
+
+  .medicos-thanks-copy {
+    gap: 15px;
+  }
+
+  .medicos-thanks-copy h1 {
+    font-size: clamp(2.45rem, 11vw, 4rem);
+    line-height: 0.96;
+  }
+
+  .medicos-thanks-lead {
+    font-size: 0.98rem;
+    line-height: 1.62;
+  }
+
+  .medicos-thanks-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .medicos-mini-card {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .medicos-thanks-sidebar {
+    display: flex;
+    gap: 14px;
+  }
+
+  .medicos-thanks-panel {
+    padding: 21px 18px;
+  }
+
+  .medicos-thanks-panel h2 {
+    margin-top: 18px;
+    font-size: 1.82rem;
+  }
+
+  .medicos-thanks-panel p {
+    font-size: 0.94rem;
+  }
+
+  .medicos-step-card {
+    padding: 16px 17px 16px 22px;
+  }
+
+  .medicos-thanks-badges span {
+    font-size: 0.77rem;
+  }
+}
+
+/* Accesibilidad: elimina animaciones para quien las desactive */
+
+@media (prefers-reduced-motion: reduce) {
+  .medicos-thanks-copy,
+  .medicos-thanks-sidebar,
+  .medicos-mini-card,
+  .medicos-step-card,
+  .medicos-thanks-badges span,
+  .medicos-whatsapp-button,
+  .medicos-mini-card::after,
+  .medicos-whatsapp-button::after,
+  .medicos-thanks-panel .progress-fill {
+    animation: none !important;
+  }
+
+  .medicos-mini-card,
+  .medicos-step-card,
+  .medicos-whatsapp-button {
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   OVERRIDE — IMAGEN PNG SIN FONDO PARA MÉDICOS DOCENTES
+   ========================================================= */
+
+.medicos-hero-visual {
+  position: relative;
+  min-height: 430px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(167, 229, 255, 0.16);
+  background:
+    radial-gradient(circle at 50% 35%, rgba(59, 191, 255, 0.15), transparent 35%),
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 24%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  box-shadow:
+    0 28px 68px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+}
+
+.medicos-hero-visual-transparent {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 24px 18px 92px;
+  isolation: isolate;
+}
+
+.medicos-hero-team-image {
+  position: relative;
+  z-index: 3;
+  width: min(100%, 540px);
+  max-height: 420px;
+  object-fit: contain;
+  object-position: center bottom;
+  filter:
+    drop-shadow(0 28px 45px rgba(0, 0, 0, 0.26))
+    drop-shadow(0 0 24px rgba(72, 201, 255, 0.18));
+  animation:
+    medicosFloatImage 4.8s ease-in-out infinite,
+    medicosFadeUp 0.9s ease both;
+  transform-origin: center bottom;
+}
+
+.medicos-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(20px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.medicos-hero-glow.glow-1 {
+  width: 240px;
+  height: 240px;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(46, 200, 255, 0.34), transparent 68%);
+  animation: medicosGlowPulse 4.2s ease-in-out infinite;
+}
+
+.medicos-hero-glow.glow-2 {
+  width: 360px;
+  height: 220px;
+  left: 50%;
+  bottom: 70px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(27, 212, 126, 0.18), transparent 72%);
+  animation: medicosGlowPulseAlt 5.3s ease-in-out infinite;
+}
+
+.medicos-hero-ring {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(149, 228, 255, 0.18);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.medicos-hero-ring.ring-1 {
+  width: 290px;
+  height: 290px;
+  animation: medicosRingPulse 5s ease-in-out infinite;
+}
+
+.medicos-hero-ring.ring-2 {
+  width: 390px;
+  height: 390px;
+  border-color: rgba(79, 203, 255, 0.1);
+  animation: medicosRingPulse 6.2s ease-in-out infinite 0.8s;
+}
+
+.medicos-hero-visual-badge {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 4;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(4, 21, 70, 0.82);
+  border: 1px solid rgba(154, 228, 255, 0.22);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.18);
+  animation: medicosFadeUp 1s ease both 0.2s;
+}
+
+.medicos-hero-visual-badge span {
+  display: block;
+  margin-bottom: 5px;
+  color: #9adfff;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.medicos-hero-visual-badge strong {
+  display: block;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+/* extra movimiento para todo el bloque visual */
+.medicos-hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, transparent 0 30%, rgba(255, 255, 255, 0.08) 50%, transparent 70%);
+  transform: translateX(-130%);
+  animation: medicosHeroSweep 6s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.medicos-hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: auto;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  width: 62%;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.26), transparent 72%);
+  filter: blur(8px);
+  z-index: 1;
+}
+
+/* ANIMACIONES NUEVAS */
+
+@keyframes medicosFloatImage {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes medicosGlowPulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.08);
+  }
+}
+
+@keyframes medicosGlowPulseAlt {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.12);
+  }
+}
+
+@keyframes medicosRingPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.18;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+@keyframes medicosHeroSweep {
+  to {
+    transform: translateX(140%);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 1080px) {
+  .medicos-hero-visual {
+    min-height: 390px;
+  }
+
+  .medicos-hero-team-image {
+    width: min(100%, 480px);
+    max-height: 360px;
+  }
+
+  .medicos-hero-ring.ring-1 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .medicos-hero-ring.ring-2 {
+    width: 330px;
+    height: 330px;
+  }
+}
+
+@media (max-width: 760px) {
+  .medicos-hero-visual {
+    min-height: 330px;
+    border-radius: 22px;
+  }
+
+  .medicos-hero-visual-transparent {
+    padding: 18px 12px 84px;
+  }
+
+  .medicos-hero-team-image {
+    width: min(100%, 360px);
+    max-height: 270px;
+  }
+
+  .medicos-hero-glow.glow-1 {
+    width: 180px;
+    height: 180px;
+    top: 36px;
+  }
+
+  .medicos-hero-glow.glow-2 {
+    width: 250px;
+    height: 150px;
+    bottom: 62px;
+  }
+
+  .medicos-hero-ring.ring-1 {
+    width: 190px;
+    height: 190px;
+  }
+
+  .medicos-hero-ring.ring-2 {
+    width: 260px;
+    height: 260px;
+  }
+
+  .medicos-hero-visual-badge {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 14px;
+  }
+
+  .medicos-hero-visual-badge strong {
+    font-size: 0.92rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .medicos-hero-team-image,
+  .medicos-hero-glow,
+  .medicos-hero-ring,
+  .medicos-hero-visual::before,
+  .medicos-hero-visual-badge {
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   AJUSTES FINALES — MÉDICOS DOCENTES
+   ========================================================= */
+
+/* Título con separación clara entre "postularte" y "para" */
+
+.medicos-thanks-copy h1.medicos-title {
+  max-width: 800px;
+}
+
+.medicos-thanks-copy h1 .medicos-title-line {
+  display: block;
+  color: #ffffff !important;
+  white-space: nowrap;
+}
+
+.medicos-thanks-copy h1 .medicos-title-highlight {
+  display: inline-block;
+  margin-right: 0.22em;
+  color: #1eb5ff !important;
+}
+
+.medicos-thanks-copy h1 .medicos-title-connector {
+  display: inline-block;
+  color: #ffffff !important;
+}
+
+/* Imagen ocupando toda la tarjeta sin marcos internos */
+
+.medicos-hero-visual {
+  min-height: 470px;
+  overflow: hidden;
+  padding: 0 !important;
+  background: #0a2d64;
+}
+
+.medicos-hero-visual-transparent {
+  display: block;
+  padding: 0 !important;
+}
+
+.medicos-hero-team-image {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+  transform: scale(1.04);
+  animation: medicosHeroPhotoZoom 8s ease-in-out infinite;
+}
+
+/* Los brillos y círculos quedan detrás de la imagen */
+
+.medicos-hero-glow,
+.medicos-hero-ring {
+  z-index: 1;
+}
+
+/* Brillo ligero encima de la imagen */
+
+.medicos-hero-visual::before {
+  z-index: 4;
+  background: linear-gradient(
+    120deg,
+    transparent 0 34%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 66%
+  );
+}
+
+/* Sombra inferior para que se lea bien el mensaje */
+
+.medicos-hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 4;
+  width: 100%;
+  height: 42%;
+  background: linear-gradient(
+    0deg,
+    rgba(3, 19, 67, 0.92) 0%,
+    rgba(3, 19, 67, 0.42) 48%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Badge pegado a la parte inferior, sin margen alrededor */
+
+.medicos-hero-visual-badge {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid rgba(154, 228, 255, 0.18);
+  border-radius: 0;
+  background: rgba(3, 18, 67, 0.86);
+  box-shadow: none;
+}
+
+/* Zoom suave para que la imagen se sienta viva */
+
+@keyframes medicosHeroPhotoZoom {
+  0%,
+  100% {
+    transform: scale(1.04);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 760px) {
+  .medicos-thanks-copy h1 .medicos-title-line {
+    white-space: normal;
+  }
+
+  .medicos-hero-visual {
+    min-height: 320px;
+  }
+
+  .medicos-hero-team-image {
+    transform: scale(1.08);
+  }
+
+  .medicos-hero-visual-badge {
+    padding: 13px 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .medicos-hero-team-image {
+    animation: none !important;
+    transform: scale(1.04);
+  }
+}

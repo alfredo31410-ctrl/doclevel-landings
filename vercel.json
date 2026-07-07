@@ -1,5 +1,10 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
+    {
+      "source": "/landings/assets/:path*",
+      "destination": "/assets/:path*"
+    },
     {
       "source": "/landings/papa-primerizo/assets/:path*",
       "destination": "/assets/:path*"
@@ -21,7 +26,27 @@
       "destination": "/doctor-papa-primerizo.png"
     },
     {
+      "source": "/landings/papa-primerizo",
+      "destination": "/index.html"
+    },
+    {
       "source": "/landings/papa-primerizo/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/landings/medicos-docentes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/landings/medicos-docentes/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/medicos-docentes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/medicos-docentes/:path*",
       "destination": "/index.html"
     },
     {
