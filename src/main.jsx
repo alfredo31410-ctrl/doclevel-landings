@@ -345,12 +345,18 @@ function MedicosDocentesThanksLanding() {
             Postulación recibida
           </p>
 
-          <h1>
-            Gracias por
-            <span> postularte</span>
-            para compartir tu experiencia con DocLevel
-          </h1>
+        <h1 className="medicos-title">
+  <span className="medicos-title-line">Gracias por</span>
 
+  <span className="medicos-title-line">
+    <span className="medicos-title-highlight">postularte</span>
+    <span className="medicos-title-connector">para</span>
+  </span>
+
+  <span className="medicos-title-line">compartir tu</span>
+  <span className="medicos-title-line">experiencia</span>
+  <span className="medicos-title-line">con DocLevel</span>
+</h1>
           <p className="medicos-thanks-lead">
             Tu información fue recibida correctamente. Nuestro equipo revisará
             tu perfil profesional, especialidad y experiencia para evaluar una
@@ -495,7 +501,11 @@ function MedicosDocentesThanksLanding() {
 function App() {
   const path = window.location.pathname.toLowerCase();
 
-  if (path.startsWith("/landings/medicos-docentes")) {
+  if (
+    path === "/medicos-docentes" ||
+    path.startsWith("/medicos-docentes/") ||
+    path.startsWith("/landings/medicos-docentes")
+  ) {
     return <MedicosDocentesThanksLanding />;
   }
 
@@ -505,5 +515,4 @@ function App() {
 
   return <RegistrationLanding />;
 }
-
 createRoot(document.getElementById("root")).render(<App />);

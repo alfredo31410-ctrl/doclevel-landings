@@ -1545,3 +1545,150 @@ h2,
     animation: none !important;
   }
 }
+
+/* =========================================================
+   AJUSTES FINALES — MÉDICOS DOCENTES
+   ========================================================= */
+
+/* Título con separación clara entre "postularte" y "para" */
+
+.medicos-thanks-copy h1.medicos-title {
+  max-width: 800px;
+}
+
+.medicos-thanks-copy h1 .medicos-title-line {
+  display: block;
+  color: #ffffff !important;
+  white-space: nowrap;
+}
+
+.medicos-thanks-copy h1 .medicos-title-highlight {
+  display: inline-block;
+  margin-right: 0.22em;
+  color: #1eb5ff !important;
+}
+
+.medicos-thanks-copy h1 .medicos-title-connector {
+  display: inline-block;
+  color: #ffffff !important;
+}
+
+/* Imagen ocupando toda la tarjeta sin marcos internos */
+
+.medicos-hero-visual {
+  min-height: 470px;
+  overflow: hidden;
+  padding: 0 !important;
+  background: #0a2d64;
+}
+
+.medicos-hero-visual-transparent {
+  display: block;
+  padding: 0 !important;
+}
+
+.medicos-hero-team-image {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+  transform: scale(1.04);
+  animation: medicosHeroPhotoZoom 8s ease-in-out infinite;
+}
+
+/* Los brillos y círculos quedan detrás de la imagen */
+
+.medicos-hero-glow,
+.medicos-hero-ring {
+  z-index: 1;
+}
+
+/* Brillo ligero encima de la imagen */
+
+.medicos-hero-visual::before {
+  z-index: 4;
+  background: linear-gradient(
+    120deg,
+    transparent 0 34%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 66%
+  );
+}
+
+/* Sombra inferior para que se lea bien el mensaje */
+
+.medicos-hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 4;
+  width: 100%;
+  height: 42%;
+  background: linear-gradient(
+    0deg,
+    rgba(3, 19, 67, 0.92) 0%,
+    rgba(3, 19, 67, 0.42) 48%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Badge pegado a la parte inferior, sin margen alrededor */
+
+.medicos-hero-visual-badge {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid rgba(154, 228, 255, 0.18);
+  border-radius: 0;
+  background: rgba(3, 18, 67, 0.86);
+  box-shadow: none;
+}
+
+/* Zoom suave para que la imagen se sienta viva */
+
+@keyframes medicosHeroPhotoZoom {
+  0%,
+  100% {
+    transform: scale(1.04);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 760px) {
+  .medicos-thanks-copy h1 .medicos-title-line {
+    white-space: normal;
+  }
+
+  .medicos-hero-visual {
+    min-height: 320px;
+  }
+
+  .medicos-hero-team-image {
+    transform: scale(1.08);
+  }
+
+  .medicos-hero-visual-badge {
+    padding: 13px 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .medicos-hero-team-image {
+    animation: none !important;
+    transform: scale(1.04);
+  }
+}
