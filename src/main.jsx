@@ -497,7 +497,6 @@ function MedicosDocentesThanksLanding() {
     </main>
   );
 }
-
 function App() {
   const path = window.location.pathname.toLowerCase();
 

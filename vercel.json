@@ -2,6 +2,10 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
+      "source": "/landings/assets/:path*",
+      "destination": "/assets/:path*"
+    },
+    {
       "source": "/landings/papa-primerizo/assets/:path*",
       "destination": "/assets/:path*"
     },
@@ -27,6 +31,14 @@
     },
     {
       "source": "/landings/papa-primerizo/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/landings/medicos-docentes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/landings/medicos-docentes/:path*",
       "destination": "/index.html"
     },
     {
