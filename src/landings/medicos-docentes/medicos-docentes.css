@@ -1,0 +1,446 @@
+.med-doc-page {
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 7%, rgba(0, 165, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 10% 10%, rgba(64, 224, 190, 0.1), transparent 27%),
+    #071837;
+  color: #f8fcff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.med-doc-page * {
+  box-sizing: border-box;
+}
+
+.med-doc-header,
+.med-doc-hero,
+.med-doc-section,
+.med-doc-final-cta {
+  width: min(1180px, calc(100% - 40px));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.med-doc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 28px;
+}
+
+.med-doc-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.med-doc-logo img {
+  display: block;
+  width: 138px;
+  height: auto;
+  max-width: 138px;
+}
+
+.med-doc-header-link {
+  color: rgba(240, 248, 255, 0.82);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.med-doc-header-link:hover {
+  color: #ffffff;
+}
+
+.med-doc-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(290px, 0.75fr);
+  gap: 52px;
+  align-items: center;
+  padding-top: 84px;
+  padding-bottom: 105px;
+}
+
+.med-doc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  color: #86e2ff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.med-doc-hero h1,
+.med-doc-section h2,
+.med-doc-final-cta h2 {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.med-doc-hero h1 {
+  max-width: 780px;
+  font-size: clamp(3rem, 6vw, 5.7rem);
+  line-height: 0.98;
+}
+
+.med-doc-lead {
+  max-width: 700px;
+  margin: 28px 0 0;
+  color: rgba(226, 240, 250, 0.84);
+  font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+  line-height: 1.7;
+}
+
+.med-doc-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.med-doc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 22px;
+  border-radius: 14px;
+  font-size: 0.96rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.med-doc-btn:hover {
+  transform: translateY(-2px);
+}
+
+.med-doc-btn-primary {
+  background: #4dd8ff;
+  color: #062232;
+  box-shadow: 0 14px 32px rgba(77, 216, 255, 0.2);
+}
+
+.med-doc-btn-primary:hover {
+  background: #79e4ff;
+  box-shadow: 0 18px 36px rgba(77, 216, 255, 0.28);
+}
+
+.med-doc-btn-secondary {
+  border: 1px solid rgba(226, 240, 250, 0.25);
+  color: #f6fbff;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.med-doc-btn-secondary:hover {
+  border-color: rgba(137, 225, 255, 0.7);
+  background: rgba(137, 225, 255, 0.08);
+}
+
+.med-doc-btn-light {
+  flex-shrink: 0;
+  background: #ffffff;
+  color: #0b3043;
+}
+
+.med-doc-note {
+  margin: 20px 0 0;
+  color: rgba(226, 240, 250, 0.58);
+  font-size: 0.87rem;
+  line-height: 1.55;
+}
+
+.med-doc-hero-card {
+  padding: 34px;
+  border: 1px solid rgba(167, 220, 242, 0.2);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(27, 77, 103, 0.78), rgba(11, 32, 48, 0.88)),
+    rgba(255, 255, 255, 0.04);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+}
+
+.med-doc-card-icon {
+  display: grid;
+  width: 55px;
+  height: 55px;
+  place-items: center;
+  border-radius: 16px;
+  color: #63dcff;
+  background: rgba(99, 220, 255, 0.12);
+}
+
+.med-doc-card-label {
+  margin: 27px 0 10px;
+  color: #8ce5ff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.med-doc-hero-card h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.65rem, 2.8vw, 2.2rem);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+.med-doc-hero-card > p:not(.med-doc-card-label) {
+  margin: 18px 0 0;
+  color: rgba(228, 241, 248, 0.76);
+  line-height: 1.65;
+}
+
+.med-doc-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 26px;
+}
+
+.med-doc-card-tags span {
+  padding: 8px 10px;
+  border: 1px solid rgba(183, 235, 249, 0.16);
+  border-radius: 999px;
+  color: rgba(240, 250, 255, 0.76);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.med-doc-section {
+  padding: 98px 0;
+}
+
+.med-doc-profile-section,
+.med-doc-formats-section,
+.med-doc-process-section {
+  border-top: 1px solid rgba(225, 243, 255, 0.09);
+}
+
+.med-doc-section-heading {
+  max-width: 760px;
+}
+
+.med-doc-section h2 {
+  max-width: 800px;
+  font-size: clamp(2.25rem, 4vw, 3.85rem);
+  line-height: 1.03;
+}
+
+.med-doc-section-heading > p:not(.med-doc-eyebrow) {
+  margin: 23px 0 0;
+  color: rgba(221, 238, 247, 0.76);
+  font-size: 1.02rem;
+  line-height: 1.72;
+}
+
+.med-doc-grid {
+  display: grid;
+  gap: 18px;
+  margin-top: 42px;
+}
+
+.med-doc-grid-four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.med-doc-info-card {
+  min-height: 224px;
+  padding: 25px;
+  border: 1px solid rgba(219, 240, 252, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.med-doc-info-card > span {
+  display: inline-block;
+  color: #76dcfa;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.med-doc-info-card h3 {
+  margin: 28px 0 10px;
+  color: #ffffff;
+  font-size: 1.16rem;
+  letter-spacing: -0.02em;
+}
+
+.med-doc-info-card p {
+  margin: 0;
+  color: rgba(220, 239, 248, 0.69);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.med-doc-format-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 40px;
+}
+
+.med-doc-format-list article {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 72px;
+  padding: 18px 20px;
+  border: 1px solid rgba(219, 240, 252, 0.1);
+  border-radius: 15px;
+  color: rgba(242, 250, 255, 0.92);
+  background: rgba(255, 255, 255, 0.035);
+  font-weight: 700;
+}
+
+.med-doc-format-list svg {
+  flex-shrink: 0;
+  color: #67dfff;
+}
+
+.med-doc-process-banner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  padding: clamp(30px, 5vw, 58px);
+  border-radius: 26px;
+  background: linear-gradient(120deg, #14779b, #13445b);
+}
+
+.med-doc-process-banner h2 {
+  max-width: 690px;
+  font-size: clamp(2rem, 3.8vw, 3.35rem);
+}
+
+.med-doc-process-banner p:not(.med-doc-eyebrow) {
+  max-width: 720px;
+  margin: 22px 0 0;
+  color: rgba(242, 251, 255, 0.78);
+  line-height: 1.7;
+}
+
+.med-doc-steps {
+  margin-top: 22px;
+}
+
+.med-doc-final-cta {
+  margin-top: 5px;
+  margin-bottom: 78px;
+  padding: clamp(38px, 7vw, 78px);
+  border: 1px solid rgba(94, 221, 255, 0.18);
+  border-radius: 28px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top, rgba(40, 183, 236, 0.18), transparent 45%),
+    rgba(8, 31, 45, 0.76);
+}
+
+.med-doc-final-cta h2 {
+  max-width: 850px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: clamp(2.15rem, 4.2vw, 4rem);
+  line-height: 1.02;
+}
+
+.med-doc-final-cta > p:not(.med-doc-eyebrow) {
+  max-width: 720px;
+  margin: 22px auto 30px;
+  color: rgba(222, 240, 248, 0.76);
+  line-height: 1.7;
+}
+
+.med-doc-final-cta small {
+  display: block;
+  margin-top: 15px;
+  color: rgba(222, 240, 248, 0.55);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 920px) {
+  .med-doc-hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-top: 58px;
+    padding-bottom: 74px;
+  }
+
+  .med-doc-hero-card {
+    max-width: 620px;
+  }
+
+  .med-doc-grid-four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .med-doc-process-banner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 620px) {
+  .med-doc-header,
+  .med-doc-hero,
+  .med-doc-section,
+  .med-doc-final-cta {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .med-doc-header {
+    padding-top: 20px;
+  }
+
+  .med-doc-logo img {
+    width: 120px;
+    max-width: 120px;
+  }
+
+  .med-doc-header-link {
+    font-size: 0.78rem;
+  }
+
+  .med-doc-hero {
+    padding-top: 48px;
+    padding-bottom: 65px;
+  }
+
+  .med-doc-hero h1 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .med-doc-hero-actions,
+  .med-doc-btn {
+    width: 100%;
+  }
+
+  .med-doc-section {
+    padding: 68px 0;
+  }
+
+  .med-doc-grid-four,
+  .med-doc-format-list {
+    grid-template-columns: 1fr;
+  }
+
+  .med-doc-info-card {
+    min-height: auto;
+  }
+
+  .med-doc-process-banner,
+  .med-doc-final-cta {
+    border-radius: 21px;
+  }
+}
