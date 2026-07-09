@@ -11,6 +11,10 @@ import {
 } from "lucide-react";
 import "./styles.css";
 
+import { getLandingBySlug } from "./landings";
+import { DirectSaleLanding } from "./components/landing/DirectSaleLanding";
+import { NotFoundLanding } from "./components/landing/NotFoundLanding";
+
 import doclevelLogoMedicos from "./assets/medicos-docentes/doclevel-logo.png";
 import equipoMedicoGracias from "./assets/medicos-docentes/equipo-medico-gracias.png";
 
@@ -345,18 +349,19 @@ function MedicosDocentesThanksLanding() {
             Postulación recibida
           </p>
 
-        <h1 className="medicos-title">
-  <span className="medicos-title-line">Gracias por</span>
+          <h1 className="medicos-title">
+            <span className="medicos-title-line">Gracias por</span>
 
-  <span className="medicos-title-line">
-    <span className="medicos-title-highlight">postularte</span>
-    <span className="medicos-title-connector">para</span>
-  </span>
+            <span className="medicos-title-line">
+              <span className="medicos-title-highlight">postularte</span>
+              <span className="medicos-title-connector">para</span>
+            </span>
 
-  <span className="medicos-title-line">compartir tu</span>
-  <span className="medicos-title-line">experiencia</span>
-  <span className="medicos-title-line">con DocLevel</span>
-</h1>
+            <span className="medicos-title-line">compartir tu</span>
+            <span className="medicos-title-line">experiencia</span>
+            <span className="medicos-title-line">con DocLevel</span>
+          </h1>
+
           <p className="medicos-thanks-lead">
             Tu información fue recibida correctamente. Nuestro equipo revisará
             tu perfil profesional, especialidad y experiencia para evaluar una
@@ -395,22 +400,10 @@ function MedicosDocentesThanksLanding() {
             className="medicos-hero-visual medicos-hero-visual-transparent"
             aria-label="Equipo médico de DocLevel"
           >
-            <span
-              className="medicos-hero-glow glow-1"
-              aria-hidden="true"
-            />
-            <span
-              className="medicos-hero-glow glow-2"
-              aria-hidden="true"
-            />
-            <span
-              className="medicos-hero-ring ring-1"
-              aria-hidden="true"
-            />
-            <span
-              className="medicos-hero-ring ring-2"
-              aria-hidden="true"
-            />
+            <span className="medicos-hero-glow glow-1" aria-hidden="true" />
+            <span className="medicos-hero-glow glow-2" aria-hidden="true" />
+            <span className="medicos-hero-ring ring-1" aria-hidden="true" />
+            <span className="medicos-hero-ring ring-2" aria-hidden="true" />
 
             <img
               className="medicos-hero-team-image"
@@ -497,8 +490,9 @@ function MedicosDocentesThanksLanding() {
     </main>
   );
 }
+
 function App() {
-  const path = window.location.pathname.toLowerCase();
+  const path = window.location.pathname.toLowerCase().replace(/\/$/, "");
 
   if (
     path === "/medicos-docentes" ||
@@ -512,6 +506,18 @@ function App() {
     return <ThanksLanding />;
   }
 
+  if (path.startsWith("/landings/")) {
+    const slug = path.replace("/landings/", "");
+    const landing = getLandingBySlug(slug);
+
+    if (landing?.template === "direct-sale") {
+      return <DirectSaleLanding landing={landing} />;
+    }
+
+    return <NotFoundLanding />;
+  }
+
   return <RegistrationLanding />;
 }
+
 createRoot(document.getElementById("root")).render(<App />);
