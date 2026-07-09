@@ -50,6 +50,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/landings/:path*",
+      "destination": "/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
