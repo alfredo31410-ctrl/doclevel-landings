@@ -1692,3 +1692,1476 @@ h2,
     transform: scale(1.04);
   }
 }
+
+/* =========================
+   LANDINGS DE VENTA DIRECTA
+   ========================= */
+
+.sale-page {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(28, 185, 255, 0.34), transparent 32%),
+    radial-gradient(circle at 18% 82%, rgba(255, 255, 255, 0.18), transparent 30%),
+    linear-gradient(
+      112deg,
+      rgba(247, 251, 255, 0.96) 0%,
+      rgba(215, 227, 240, 0.9) 22%,
+      rgba(55, 84, 122, 0.86) 45%,
+      rgba(5, 36, 96, 0.98) 68%,
+      #03134b 100%
+    );
+  color: #ffffff;
+  min-height: 100svh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.sale-page::before {
+  background:
+    linear-gradient(
+      101deg,
+      transparent 0 46%,
+      rgba(255, 255, 255, 0.24) 48%,
+      transparent 55%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0, 12, 58, 0.78),
+      rgba(0, 12, 58, 0.16) 47%,
+      transparent 72%
+    );
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.landing-header {
+  left: clamp(22px, 4.8vw, 70px);
+  position: absolute;
+  top: clamp(16px, 3vh, 34px);
+  z-index: 9;
+}
+
+.landing-header img {
+  display: block;
+  height: clamp(46px, 5vw, 72px);
+  object-fit: contain;
+  width: auto;
+}
+
+.sale-hero {
+  align-items: center;
+  display: grid;
+  gap: clamp(16px, 2.6vw, 36px);
+  grid-template-columns:
+    minmax(340px, 0.95fr)
+    minmax(300px, 0.8fr)
+    minmax(310px, 390px);
+  margin: 0 auto;
+  max-width: 1380px;
+  min-height: 100svh;
+  padding: clamp(86px, 10vh, 118px) clamp(20px, 4.8vw, 68px)
+    clamp(22px, 4vh, 48px);
+  position: relative;
+  z-index: 3;
+}
+
+.sale-copy {
+  max-width: 690px;
+  position: relative;
+  z-index: 5;
+}
+
+.sale-eyebrow {
+  align-items: center;
+  color: #071434;
+  display: inline-flex;
+  font-size: clamp(0.76rem, 0.95vw, 0.9rem);
+  font-weight: 950;
+  gap: 8px;
+  letter-spacing: 0.08em;
+  margin: 0 0 14px;
+  padding: 8px 12px;
+  text-transform: uppercase;
+}
+
+.sale-eyebrow svg {
+  color: #0aa8ff;
+  height: 18px;
+  width: 18px;
+}
+
+.sale-copy h1 {
+  color: #050505;
+  font-size: clamp(2.45rem, 5vw, 4.95rem);
+  font-weight: 950;
+  letter-spacing: -0.04em;
+  line-height: 0.94;
+  margin: 0 0 clamp(14px, 2vh, 22px);
+  text-shadow: 0 10px 26px rgba(255, 255, 255, 0.34);
+}
+
+.sale-description {
+  color: #ffffff;
+  font-size: clamp(1.02rem, 1.5vw, 1.25rem);
+  font-weight: 750;
+  line-height: 1.42;
+  margin: 0 0 20px;
+  max-width: 640px;
+  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.trust-row span {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 999px;
+  color: #06103a;
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 900;
+  gap: 8px;
+  padding: 9px 13px;
+}
+
+.trust-row svg {
+  color: #0aa8ff;
+  height: 18px;
+  width: 18px;
+}
+
+.checkout-button {
+  align-items: center;
+  animation: pulseButton 1.8s ease-in-out infinite;
+  background: #15a9ff;
+  border: 0;
+  border-radius: 10px;
+  box-shadow:
+    0 0 0 7px rgba(21, 169, 255, 0.16),
+    0 18px 44px rgba(21, 169, 255, 0.42);
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 950;
+  gap: 12px;
+  justify-content: center;
+  min-height: 60px;
+  min-width: min(100%, 320px);
+  padding: 16px 26px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.checkout-button:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.checkout-button svg {
+  height: 24px;
+  width: 24px;
+}
+
+.checkout-note {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 14px 0 0;
+  max-width: 420px;
+  text-shadow: 0 10px 22px rgba(0, 0, 0, 0.36);
+}
+
+.sale-person {
+  align-self: end;
+  background: linear-gradient(0deg, rgba(1, 10, 45, 0.36), transparent 46%);
+  display: flex;
+  height: clamp(520px, 82svh, 850px);
+  justify-content: center;
+  justify-self: center;
+  margin-bottom: calc(clamp(18px, 4vh, 44px) * -1);
+  max-width: 560px;
+  overflow: visible;
+  position: relative;
+  width: min(42vw, 560px);
+  z-index: 4;
+}
+
+.sale-person::after {
+  background: linear-gradient(
+    0deg,
+    rgba(2, 13, 58, 0.8),
+    rgba(2, 13, 58, 0.26) 42%,
+    transparent 68%
+  );
+  bottom: 0;
+  content: "";
+  height: 35%;
+  left: -12%;
+  pointer-events: none;
+  position: absolute;
+  right: -12%;
+  z-index: 2;
+}
+
+.sale-person img {
+  align-self: end;
+  display: block;
+  filter: drop-shadow(0 30px 48px rgba(0, 0, 0, 0.48));
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  object-position: bottom center;
+  position: relative;
+  transform: translateX(-2%);
+  width: auto;
+  z-index: 1;
+}
+
+.sale-card {
+  align-self: center;
+  background: rgba(2, 15, 59, 0.84);
+  border: 1px solid rgba(156, 217, 255, 0.24);
+  border-radius: 12px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+  max-width: 400px;
+  padding: clamp(18px, 2.1vw, 28px);
+  position: relative;
+  z-index: 6;
+}
+
+.sale-card-icon {
+  align-items: center;
+  background: rgba(21, 169, 255, 0.14);
+  border: 1px solid rgba(174, 224, 255, 0.28);
+  border-radius: 14px;
+  color: #aee0ff;
+  display: inline-flex;
+  height: 54px;
+  justify-content: center;
+  margin-bottom: 14px;
+  width: 54px;
+}
+
+.sale-card-icon svg {
+  height: 28px;
+  width: 28px;
+}
+
+.card-kicker {
+  color: #aee0ff;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.sale-card h2 {
+  color: #ffffff;
+  font-size: clamp(1.45rem, 2.15vw, 2rem);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  margin: 0 0 14px;
+}
+
+.price-card,
+.mobile-price-card {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 12px;
+  color: #06103a;
+  margin-bottom: 16px;
+  padding: 14px;
+}
+
+.price-card span,
+.mobile-price-card span {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.price-card strong,
+.mobile-price-card strong {
+  color: #0a8fe0;
+  display: block;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 950;
+  line-height: 1;
+}
+
+.price-card small {
+  color: #324968;
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.mobile-price-card {
+  display: none;
+  max-width: 320px;
+}
+
+.sale-card ul {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.sale-card li {
+  align-items: flex-start;
+  color: #d9efff;
+  display: flex;
+  font-size: 0.98rem;
+  font-weight: 720;
+  gap: 10px;
+  line-height: 1.32;
+}
+
+.sale-card li svg {
+  color: #18c3ff;
+  flex: 0 0 auto;
+  height: 20px;
+  margin-top: 1px;
+  width: 20px;
+}
+
+.guarantee-text {
+  border-top: 1px solid rgba(174, 224, 255, 0.18);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+  padding-top: 14px;
+}
+
+.ebook {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(127, 212, 255, 0.3), transparent 32%),
+    linear-gradient(
+      112deg,
+      #f7fbff 0%,
+      #dbe8f4 20%,
+      #4a6e9a 45%,
+      #063160 68%,
+      #041544 100%
+    );
+}
+
+.doctor-ai {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(100, 255, 218, 0.24), transparent 32%),
+    linear-gradient(
+      112deg,
+      #f7fbff 0%,
+      #dbe8f4 20%,
+      #385e8d 45%,
+      #07245d 68%,
+      #020b34 100%
+    );
+}
+
+.not-found-page {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.not-found-card {
+  background: rgba(2, 15, 59, 0.86);
+  border: 1px solid rgba(156, 217, 255, 0.24);
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+  max-width: 520px;
+  padding: 30px;
+  position: relative;
+  text-align: center;
+  z-index: 4;
+}
+
+.not-found-card img {
+  height: 64px;
+  margin-bottom: 16px;
+}
+
+.not-found-card h1 {
+  margin: 0 0 10px;
+}
+
+.not-found-card p {
+  color: #d9efff;
+  margin: 0;
+}
+
+@keyframes pulseButton {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-1px) scale(1.015);
+  }
+}
+
+@media (max-width: 1120px) {
+  .sale-hero {
+    grid-template-columns: minmax(320px, 1fr) minmax(280px, 0.82fr);
+  }
+
+  .sale-card {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 720px;
+    width: 100%;
+  }
+
+  .sale-card ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .price-card {
+    display: none;
+  }
+
+  .mobile-price-card {
+    display: block;
+  }
+}
+
+@media (max-width: 760px) {
+  .sale-page {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(239, 246, 252, 0.98) 0%,
+        rgba(44, 79, 121, 0.94) 42%,
+        #03134b 100%
+      );
+  }
+
+  .landing-header {
+    left: 20px;
+    top: 18px;
+  }
+
+  .landing-header img {
+    height: 48px;
+  }
+
+  .sale-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: auto;
+    padding: 92px 18px 28px;
+  }
+
+  .sale-copy {
+    width: 100%;
+  }
+
+  .sale-copy h1 {
+    font-size: clamp(2.25rem, 13vw, 3.4rem);
+  }
+
+  .sale-description {
+    font-size: 1rem;
+  }
+
+  .checkout-button {
+    width: 100%;
+  }
+
+  .sale-person {
+    height: 410px;
+    margin-bottom: -34px;
+    order: 2;
+    width: min(100%, 360px);
+  }
+
+  .sale-card {
+    order: 3;
+    width: 100%;
+  }
+
+  .sale-card ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FIX VISIBILIDAD LANDINGS VENTA DIRECTA */
+
+.sale-page {
+  display: block !important;
+  min-height: 100vh !important;
+}
+
+.sale-page .landing-header,
+.sale-page .sale-hero,
+.sale-page .sale-copy,
+.sale-page .sale-person,
+.sale-page .sale-card {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.sale-page .sale-hero {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+.sale-page .landing-header {
+  position: absolute !important;
+  z-index: 20 !important;
+}
+
+.sale-page .sale-copy,
+.sale-page .sale-person,
+.sale-page .sale-card {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.sale-page .sale-person img,
+.sale-page .landing-header img {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* =========================================================
+   AJUSTE VISUAL — DOCTOR PROTAGONISTA + GRID DESVANECIDO
+   ========================================================= */
+
+.sale-page .sale-person {
+  align-self: end !important;
+  display: flex !important;
+  justify-content: center !important;
+  justify-self: center !important;
+  height: clamp(680px, 92svh, 1040px) !important;
+  width: min(54vw, 760px) !important;
+  max-width: 760px !important;
+  margin-bottom: -58px !important;
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 4 !important;
+}
+
+.sale-page .sale-person::before {
+  content: "";
+  position: absolute;
+  inset: 6% -3% 7% -3%;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 34px;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(55, 190, 255, 0.24), transparent 62%);
+
+  background-size: 30px 30px, 30px 30px, auto;
+  opacity: 0.75;
+
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 32%,
+    rgba(0, 0, 0, 0.82) 50%,
+    rgba(0, 0, 0, 0) 78%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 32%,
+    rgba(0, 0, 0, 0.82) 50%,
+    rgba(0, 0, 0, 0) 78%
+  );
+}
+
+.sale-page .sale-person::after {
+  content: "";
+  position: absolute;
+  left: -14%;
+  right: -14%;
+  bottom: -5%;
+  height: 48%;
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at center, rgba(87, 190, 255, 0.3), transparent 58%),
+    linear-gradient(
+      0deg,
+      rgba(2, 13, 58, 0.92),
+      rgba(2, 13, 58, 0.28) 44%,
+      transparent 76%
+    );
+}
+
+.sale-page .sale-person img {
+  align-self: end !important;
+  display: block !important;
+  height: 122% !important;
+  width: auto !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  object-position: bottom center !important;
+  position: relative !important;
+  z-index: 2 !important;
+  filter:
+    drop-shadow(0 38px 56px rgba(0, 0, 0, 0.46))
+    drop-shadow(0 0 32px rgba(44, 178, 255, 0.18)) !important;
+}
+
+.sale-page .landing-header {
+  top: 24px !important;
+}
+
+@media (max-width: 1120px) {
+  .sale-page .sale-person {
+    height: 580px !important;
+    width: min(100%, 540px) !important;
+    margin-bottom: -34px !important;
+  }
+
+  .sale-page .sale-person img {
+    height: 114% !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .sale-page .sale-person {
+    height: 480px !important;
+    width: min(100%, 430px) !important;
+    margin-bottom: -34px !important;
+  }
+
+  .sale-page .sale-person::before {
+    inset: 10% 0% 8% 0%;
+    background-size: 22px 22px, 22px 22px, auto;
+  }
+
+  .sale-page .sale-person img {
+    height: 112% !important;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE FINAL — LANDINGS DE VENTA DIRECTA
+   Botón fijo + contenido centrado en celular
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .sale-page {
+    min-height: 100svh !important;
+    padding-bottom: 96px !important;
+    overflow-x: hidden !important;
+  }
+
+  .sale-page .landing-header {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 18px 16px 0 !important;
+    z-index: 20 !important;
+  }
+
+  .sale-page .landing-header img {
+    height: 46px !important;
+    margin: 0 auto !important;
+  }
+
+  .sale-page .sale-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 20px !important;
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 24px 16px 36px !important;
+    text-align: center !important;
+  }
+
+  .sale-page .sale-copy {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .sale-page .sale-eyebrow {
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .sale-page .sale-copy h1 {
+    max-width: 10.5ch !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: clamp(2.25rem, 13vw, 3.55rem) !important;
+    line-height: 0.92 !important;
+    text-align: center !important;
+  }
+
+  .sale-page .sale-description {
+    max-width: 34ch !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 1rem !important;
+    line-height: 1.42 !important;
+    text-align: center !important;
+  }
+
+  .sale-page .trust-row {
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .sale-page .mobile-price-card {
+    display: block !important;
+    width: min(100%, 320px) !important;
+    margin: 0 auto 16px !important;
+    text-align: center !important;
+  }
+
+  .sale-page .sale-person {
+    order: 2 !important;
+    height: 430px !important;
+    width: min(100%, 430px) !important;
+    max-width: 430px !important;
+    margin: -12px auto -28px !important;
+  }
+
+  .sale-page .sale-person::before {
+    inset: 8% 2% 8% 2% !important;
+    background-size: 22px 22px, 22px 22px, auto !important;
+  }
+
+  .sale-page .sale-person img {
+    height: 112% !important;
+    transform: translateX(0) !important;
+  }
+
+  .sale-page .sale-card {
+    order: 3 !important;
+    width: 100% !important;
+    max-width: 430px !important;
+    margin: 0 auto !important;
+    padding: 22px 18px !important;
+    text-align: left !important;
+  }
+
+  .sale-page .sale-card-icon {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .sale-page .card-kicker,
+  .sale-page .sale-card h2,
+  .sale-page .price-card,
+  .sale-page .guarantee-text {
+    text-align: center !important;
+  }
+
+  .sale-page .sale-card ul {
+    grid-template-columns: 1fr !important;
+    gap: 13px !important;
+  }
+
+  .sale-page .sale-card li {
+    text-align: left !important;
+  }
+
+  .sale-page .price-card {
+    display: none !important;
+  }
+
+  .sale-page .checkout-note {
+    display: none !important;
+  }
+
+  .sale-page .checkout-button {
+    position: fixed !important;
+    left: 16px !important;
+    right: 16px !important;
+    bottom: 16px !important;
+    z-index: 999 !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 62px !important;
+    border-radius: 999px !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    font-size: 0.98rem !important;
+    letter-spacing: 0.02em !important;
+
+    animation: none !important;
+    transform: none !important;
+
+    box-shadow:
+      0 0 0 8px rgba(21, 169, 255, 0.14),
+      0 18px 42px rgba(0, 0, 0, 0.34),
+      0 12px 34px rgba(21, 169, 255, 0.34) !important;
+  }
+
+  .sale-page .checkout-button:hover {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .sale-page .sale-hero {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .sale-page .sale-copy h1 {
+    font-size: clamp(2rem, 12.5vw, 3.05rem) !important;
+  }
+
+  .sale-page .sale-person {
+    height: 390px !important;
+    width: min(100%, 390px) !important;
+  }
+
+  .sale-page .sale-card {
+    max-width: 100% !important;
+  }
+
+  .sale-page .checkout-button {
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px !important;
+  }
+}
+
+/* =========================================================
+   FIX FINAL — CTA móvil siempre visible + glow radial por landing
+   Pegar hasta abajo de styles.css
+   ========================================================= */
+
+/* Quita el efecto grid y lo cambia por glow radial */
+.sale-page .sale-person::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 4% -8% 4% -8% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  border-radius: 999px !important;
+  opacity: 1 !important;
+
+  background:
+    radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.24), transparent 18%),
+    radial-gradient(circle at 50% 52%, rgba(60, 190, 255, 0.36), transparent 42%),
+    radial-gradient(circle at 50% 58%, rgba(4, 28, 86, 0.46), transparent 68%) !important;
+
+  background-size: auto !important;
+  background-position: center !important;
+
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 18%,
+    rgba(0, 0, 0, 0.88) 42%,
+    rgba(0, 0, 0, 0) 76%
+  ) !important;
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 18%,
+    rgba(0, 0, 0, 0.88) 42%,
+    rgba(0, 0, 0, 0) 76%
+  ) !important;
+}
+
+/* Variantes del glow según landing */
+.sale-page.baby-mx .sale-person::before,
+.sale-page.baby-usa .sale-person::before,
+.sale-page.baby-colombia .sale-person::before {
+  background:
+    radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.26), transparent 18%),
+    radial-gradient(circle at 50% 52%, rgba(53, 184, 255, 0.42), transparent 42%),
+    radial-gradient(circle at 50% 58%, rgba(5, 45, 116, 0.52), transparent 70%) !important;
+}
+
+.sale-page.ebook .sale-person::before {
+  background:
+    radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.28), transparent 18%),
+    radial-gradient(circle at 50% 52%, rgba(126, 211, 255, 0.34), transparent 40%),
+    radial-gradient(circle at 50% 58%, rgba(40, 84, 132, 0.5), transparent 70%) !important;
+}
+
+.sale-page.doctor-ai .sale-person::before {
+  background:
+    radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.26), transparent 18%),
+    radial-gradient(circle at 50% 52%, rgba(74, 255, 218, 0.3), transparent 40%),
+    radial-gradient(circle at 50% 58%, rgba(17, 97, 130, 0.55), transparent 72%) !important;
+}
+
+/* Refuerzo del halo inferior */
+.sale-page .sale-person::after {
+  background:
+    radial-gradient(circle at center, rgba(87, 190, 255, 0.32), transparent 58%),
+    linear-gradient(
+      0deg,
+      rgba(2, 13, 58, 0.94),
+      rgba(2, 13, 58, 0.26) 46%,
+      transparent 78%
+    ) !important;
+}
+
+/* CTA móvil realmente fijo y visible */
+@media (max-width: 900px) {
+  .sale-page {
+    padding-bottom: 120px !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+
+  .sale-page .sale-copy {
+    overflow: visible !important;
+  }
+
+  .sale-page .checkout-button {
+    position: fixed !important;
+    left: max(14px, env(safe-area-inset-left)) !important;
+    right: max(14px, env(safe-area-inset-right)) !important;
+    bottom: max(14px, env(safe-area-inset-bottom)) !important;
+    z-index: 2147483647 !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 64px !important;
+    padding: 16px 22px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #16a9ff, #0877d8) !important;
+    color: #ffffff !important;
+
+    font-size: 1rem !important;
+    font-weight: 950 !important;
+    letter-spacing: 0.02em !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+
+    transform: translate3d(0, 0, 0) !important;
+    will-change: transform !important;
+    animation: none !important;
+
+    box-shadow:
+      0 0 0 8px rgba(21, 169, 255, 0.16),
+      0 18px 42px rgba(0, 0, 0, 0.38),
+      0 12px 34px rgba(21, 169, 255, 0.38) !important;
+
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+  }
+
+  .sale-page .checkout-button:hover {
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  .sale-page .checkout-button svg {
+    flex: 0 0 auto !important;
+  }
+}
+
+/* En celulares pequeños, deja más aire abajo para que no tape contenido */
+@media (max-width: 430px) {
+  .sale-page {
+    padding-bottom: 130px !important;
+  }
+
+  .sale-page .checkout-button {
+    left: max(12px, env(safe-area-inset-left)) !important;
+    right: max(12px, env(safe-area-inset-right)) !important;
+    bottom: max(12px, env(safe-area-inset-bottom)) !important;
+    min-height: 62px !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* =========================================================
+   FINAL REAL — BOTÓN MÓVIL FIJO + GRADIENTE RADIAL PROTAGONISTA
+   ========================================================= */
+
+/* Botón desktop normal */
+.sale-page .desktop-checkout {
+  display: inline-flex !important;
+}
+
+/* Botón móvil fijo oculto en escritorio */
+.sale-page .mobile-fixed-checkout {
+  display: none !important;
+}
+
+/* Contenedor del protagonista */
+.sale-page .sale-person {
+  background: transparent !important;
+  isolation: isolate !important;
+}
+
+/* Apaga el grid anterior aunque siga escrito arriba */
+.sale-page .sale-person::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Gradiente radial real detrás del doctor */
+.sale-page .sale-person-glow {
+  position: absolute !important;
+  inset: 1% -16% 0% -16% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  border-radius: 999px !important;
+  opacity: 1 !important;
+  filter: blur(0.2px) !important;
+
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.36), transparent 14%),
+    radial-gradient(circle at 50% 45%, rgba(85, 205, 255, 0.44), transparent 34%),
+    radial-gradient(circle at 50% 55%, rgba(9, 72, 158, 0.54), transparent 56%),
+    radial-gradient(circle at 50% 70%, rgba(2, 14, 62, 0.78), transparent 76%) !important;
+
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 18%,
+    rgba(0, 0, 0, 0.92) 42%,
+    rgba(0, 0, 0, 0.55) 58%,
+    rgba(0, 0, 0, 0) 78%
+  ) !important;
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 18%,
+    rgba(0, 0, 0, 0.92) 42%,
+    rgba(0, 0, 0, 0.55) 58%,
+    rgba(0, 0, 0, 0) 78%
+  ) !important;
+}
+
+/* Color del glow para las 3 landings del bebé */
+.sale-page.baby-mx .sale-person-glow,
+.sale-page.baby-usa .sale-person-glow,
+.sale-page.baby-colombia .sale-person-glow {
+  background:
+    radial-gradient(circle at 50% 36%, rgba(255, 255, 255, 0.38), transparent 15%),
+    radial-gradient(circle at 50% 45%, rgba(80, 198, 255, 0.48), transparent 34%),
+    radial-gradient(circle at 50% 58%, rgba(10, 84, 180, 0.58), transparent 58%),
+    radial-gradient(circle at 50% 72%, rgba(2, 14, 62, 0.8), transparent 78%) !important;
+}
+
+/* Color del glow para ebook */
+.sale-page.ebook .sale-person-glow {
+  background:
+    radial-gradient(circle at 50% 36%, rgba(255, 255, 255, 0.42), transparent 15%),
+    radial-gradient(circle at 50% 45%, rgba(145, 220, 255, 0.42), transparent 34%),
+    radial-gradient(circle at 50% 58%, rgba(54, 105, 160, 0.56), transparent 58%),
+    radial-gradient(circle at 50% 72%, rgba(4, 21, 68, 0.8), transparent 78%) !important;
+}
+
+/* Color del glow para agente IA */
+.sale-page.doctor-ai .sale-person-glow {
+  background:
+    radial-gradient(circle at 50% 36%, rgba(255, 255, 255, 0.38), transparent 15%),
+    radial-gradient(circle at 50% 45%, rgba(90, 255, 220, 0.34), transparent 34%),
+    radial-gradient(circle at 50% 58%, rgba(12, 113, 146, 0.56), transparent 58%),
+    radial-gradient(circle at 50% 72%, rgba(2, 14, 62, 0.84), transparent 78%) !important;
+}
+
+.sale-page .sale-person img {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.sale-page .sale-person::after {
+  z-index: 1 !important;
+}
+
+/* =========================
+   MÓVIL: CTA fijo real
+   ========================= */
+
+@media (max-width: 900px) {
+  html,
+  body,
+  #root {
+    min-height: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  body {
+    padding-bottom: 0 !important;
+  }
+
+  .sale-page {
+    min-height: 100svh !important;
+    padding-bottom: 136px !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+
+  /* Oculta el botón normal dentro del contenido en celular */
+  .sale-page .desktop-checkout {
+    display: none !important;
+  }
+
+  /* Muestra el botón fijo fuera del contenido */
+  .sale-page .mobile-fixed-checkout {
+    position: fixed !important;
+    left: 14px !important;
+    right: 14px !important;
+    bottom: 14px !important;
+    z-index: 2147483647 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 64px !important;
+    padding: 16px 22px !important;
+
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #17b7ff, #0877d8) !important;
+    color: #ffffff !important;
+
+    font-size: 1rem !important;
+    font-weight: 950 !important;
+    letter-spacing: 0.02em !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+
+    transform: none !important;
+    animation: none !important;
+    will-change: auto !important;
+
+    box-shadow:
+      0 0 0 8px rgba(21, 169, 255, 0.16),
+      0 18px 42px rgba(0, 0, 0, 0.42),
+      0 12px 34px rgba(21, 169, 255, 0.44) !important;
+  }
+
+  .sale-page .mobile-fixed-checkout:hover {
+    transform: none !important;
+  }
+
+  .sale-page .mobile-fixed-checkout svg {
+    flex: 0 0 auto !important;
+  }
+
+  /* Deja aire para que el botón no tape la última tarjeta */
+  .sale-page .sale-card {
+    margin-bottom: 24px !important;
+  }
+
+  /* Protagonista centrado y con glow visible en celular */
+  .sale-page .sale-person {
+    height: 455px !important;
+    width: min(100%, 440px) !important;
+    max-width: 440px !important;
+    margin: -10px auto -28px !important;
+    overflow: visible !important;
+  }
+
+  .sale-page .sale-person-glow {
+    inset: 2% -14% 0% -14% !important;
+    opacity: 1 !important;
+    transform: scale(1.05) !important;
+  }
+
+  .sale-page .sale-person img {
+    height: 114% !important;
+    transform: translateX(0) !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .sale-page {
+    padding-bottom: 144px !important;
+  }
+
+  .sale-page .mobile-fixed-checkout {
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    min-height: 62px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .sale-page .sale-person {
+    height: 410px !important;
+    width: min(100%, 400px) !important;
+  }
+
+  .sale-page .sale-person-glow {
+    inset: 2% -18% 0% -18% !important;
+    transform: scale(1.08) !important;
+  }
+}
+
+/* =========================================================
+   FIX DEFINITIVO — CTA móvil por portal + glow radial visible
+   ========================================================= */
+
+/* Botón normal de escritorio */
+.sale-page .desktop-checkout {
+  display: inline-flex !important;
+}
+
+/* Botón flotante creado fuera de la landing */
+.floating-checkout {
+  display: none !important;
+}
+
+/* Glow radial real detrás del protagonista */
+.sale-page .sale-person {
+  background: transparent !important;
+  isolation: isolate !important;
+}
+
+.sale-page .sale-person::before {
+  display: none !important;
+  content: none !important;
+}
+
+.sale-page .sale-person-glow {
+  position: absolute !important;
+  inset: -2% -18% -2% -18% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  border-radius: 999px !important;
+  opacity: 1 !important;
+
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.44), transparent 14%),
+    radial-gradient(circle at 50% 45%, rgba(82, 201, 255, 0.55), transparent 34%),
+    radial-gradient(circle at 50% 58%, rgba(12, 91, 188, 0.62), transparent 58%),
+    radial-gradient(circle at 50% 72%, rgba(2, 14, 62, 0.88), transparent 78%) !important;
+
+  filter: blur(0.3px) !important;
+
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 0.9) 42%,
+    rgba(0, 0, 0, 0.52) 60%,
+    rgba(0, 0, 0, 0) 80%
+  ) !important;
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 0.9) 42%,
+    rgba(0, 0, 0, 0.52) 60%,
+    rgba(0, 0, 0, 0) 80%
+  ) !important;
+}
+
+.sale-page.ebook .sale-person-glow {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.46), transparent 14%),
+    radial-gradient(circle at 50% 45%, rgba(150, 224, 255, 0.46), transparent 34%),
+    radial-gradient(circle at 50% 58%, rgba(55, 107, 162, 0.6), transparent 58%),
+    radial-gradient(circle at 50% 72%, rgba(4, 21, 68, 0.88), transparent 78%) !important;
+}
+
+.sale-page.doctor-ai .sale-person-glow {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.44), transparent 14%),
+    radial-gradient(circle at 50% 45%, rgba(88, 255, 222, 0.42), transparent 34%),
+    radial-gradient(circle at 50% 58%, rgba(14, 118, 150, 0.62), transparent 58%),
+    radial-gradient(circle at 50% 72%, rgba(2, 14, 62, 0.9), transparent 78%) !important;
+}
+
+.sale-page .sale-person img {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.sale-page .sale-person::after {
+  z-index: 1 !important;
+}
+
+/* Móvil: el botón del portal queda fijo real en viewport */
+@media (max-width: 900px) {
+  .sale-page {
+    padding-bottom: 150px !important;
+  }
+
+  .sale-page .desktop-checkout {
+    display: none !important;
+  }
+
+  .floating-checkout {
+    position: fixed !important;
+    left: 14px !important;
+    right: 14px !important;
+    bottom: 14px !important;
+    z-index: 2147483647 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 64px !important;
+    padding: 16px 22px !important;
+
+    border-radius: 999px !important;
+    border: 0 !important;
+
+    background: linear-gradient(135deg, #17b7ff, #0877d8) !important;
+    color: #ffffff !important;
+
+    font-size: 1rem !important;
+    font-weight: 950 !important;
+    letter-spacing: 0.02em !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+
+    transform: none !important;
+    animation: none !important;
+
+    box-shadow:
+      0 0 0 8px rgba(21, 169, 255, 0.16),
+      0 18px 42px rgba(0, 0, 0, 0.42),
+      0 12px 34px rgba(21, 169, 255, 0.44) !important;
+  }
+
+  .floating-checkout:hover {
+    transform: none !important;
+  }
+
+  .floating-checkout svg {
+    flex: 0 0 auto !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .sale-page {
+    padding-bottom: 160px !important;
+  }
+
+  .floating-checkout {
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    min-height: 62px !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* =========================================================
+   FIX EXTRA — CTA SIEMPRE VISIBLE DESDE QUE ENTRA EN CELULAR
+   ========================================================= */
+
+/* El botón flotante existe siempre, pero en desktop lo ocultamos */
+.floating-checkout {
+  position: fixed !important;
+  left: 14px !important;
+  right: 14px !important;
+  bottom: 14px !important;
+  z-index: 2147483647 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 64px !important;
+  padding: 16px 22px !important;
+
+  border-radius: 999px !important;
+  border: 0 !important;
+
+  background: linear-gradient(135deg, #17b7ff, #0877d8) !important;
+  color: #ffffff !important;
+
+  font-size: 1rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.02em !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+
+  transform: none !important;
+  animation: none !important;
+
+  box-shadow:
+    0 0 0 8px rgba(21, 169, 255, 0.16),
+    0 18px 42px rgba(0, 0, 0, 0.42),
+    0 12px 34px rgba(21, 169, 255, 0.44) !important;
+}
+
+/* En desktop se oculta el flotante */
+@media (min-width: 901px) {
+  .floating-checkout {
+    display: none !important;
+  }
+
+  .sale-page .desktop-checkout {
+    display: inline-flex !important;
+  }
+}
+
+/* En celular aparece desde el inicio */
+@media (max-width: 900px) {
+  .sale-page {
+    padding-bottom: 150px !important;
+  }
+
+  .sale-page .desktop-checkout {
+    display: none !important;
+  }
+
+  .floating-checkout {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .floating-checkout {
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    min-height: 62px !important;
+    font-size: 0.95rem !important;
+  }
+}
