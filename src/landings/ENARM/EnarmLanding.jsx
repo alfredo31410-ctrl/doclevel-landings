@@ -106,7 +106,6 @@ function EnarmRegistrationModal({ isOpen, onClose, onSuccess }) {
 
         hasAttemptedSubmit = true;
         hasSavedAttempt = Boolean(savePendingEnarmAttempt());
-        submitControl.disabled = true;
         syncAttributionFields(wrapper);
       }
     };
