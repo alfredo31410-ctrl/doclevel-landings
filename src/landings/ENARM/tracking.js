@@ -171,7 +171,7 @@ export function getPendingEnarmAttempt() {
   }
 }
 
-export function consumePendingEnarmLead() {
+export function consumePendingEnarmCompleteRegistration() {
   const attempt = getPendingEnarmAttempt();
 
   if (
@@ -183,7 +183,7 @@ export function consumePendingEnarmLead() {
     return false;
   }
 
-  const tracked = trackMetaEventOnce("Lead", attempt.id);
+  const tracked = trackMetaEventOnce("CompleteRegistration", attempt.id);
 
   if (!tracked) return false;
 
