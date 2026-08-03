@@ -38,6 +38,18 @@
       "destination": "/index.html"
     },
     {
+      "source": "/landings/ENARM",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/landings/ENARM/gracias",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/landings/ENARM/unirse-whatsapp",
+      "destination": "/index.html"
+    },
+    {
       "source": "/landings/medicos-docentes/:path*",
       "destination": "/index.html"
     },
@@ -47,6 +59,10 @@
     },
     {
       "source": "/medicos-docentes/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/landings/:path*",
       "destination": "/index.html"
     },
     {

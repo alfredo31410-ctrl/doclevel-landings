@@ -13,7 +13,11 @@ import "./styles.css";
 
 import { getLandingBySlug } from "./landings";
 import { DirectSaleLanding } from "./components/landing/DirectSaleLanding";
+import { EnarmLanding } from "./landings/ENARM/EnarmLanding";
+import { EnarmGracias } from "./landings/ENARM/gracias/Gracias";
+import { UnirseWhatsApp } from "./landings/ENARM/unirse-whatsapp/UnirseWhatsApp";
 import { NotFoundLanding } from "./components/landing/NotFoundLanding";
+import { captureEnarmAttribution, trackRoutePageView } from "./landings/ENARM/tracking";
 
 import doclevelLogoMedicos from "./assets/medicos-docentes/doclevel-logo.png";
 import equipoMedicoGracias from "./assets/medicos-docentes/equipo-medico-gracias.png";
@@ -33,6 +37,27 @@ function trackMetaEvent(eventName, parameters = {}) {
   if (typeof window !== "undefined" && typeof window.fbq === "function") {
     window.fbq("track", eventName, parameters);
   }
+}
+
+function trackMetaEventOnce(eventName, dedupeKey, parameters = {}) {
+  if (
+    typeof window === "undefined" ||
+    typeof window.fbq !== "function"
+  ) {
+    return;
+  }
+
+  const storageKey = `meta_pixel:${eventName}:${dedupeKey}`;
+
+  try {
+    if (window.sessionStorage.getItem(storageKey)) return;
+
+    window.sessionStorage.setItem(storageKey, "1");
+  } catch {
+    // Tracking should never prevent the landing from working.
+  }
+
+  trackMetaEvent(eventName, parameters);
 }
 
 function ActiveCampaignModal({ isOpen, onClose }) {
@@ -105,7 +130,7 @@ function ActiveCampaignModal({ isOpen, onClose }) {
 
       if (!successMessage) return;
 
-      trackMetaEvent("CompleteRegistration", {
+      trackMetaEventOnce("CompleteRegistration", "papa-primerizo", {
         content_name: "Registro papá primerizo",
       });
 
@@ -239,12 +264,6 @@ function RegistrationLanding() {
 }
 
 function ThanksLanding() {
-  useEffect(() => {
-    trackMetaEvent("CompleteRegistration", {
-      content_name: "Gracias papá primerizo",
-    });
-  }, []);
-
   return (
     <main className="landing-page thanks-page">
       <LogoExit />
@@ -493,6 +512,27 @@ function MedicosDocentesThanksLanding() {
 
 function App() {
   const path = window.location.pathname.toLowerCase().replace(/\/$/, "");
+  const routePath = path.replace(/^\/landings/, "") || "/";
+
+  useEffect(() => {
+    trackRoutePageView(routePath);
+
+    if (routePath === "/enarm") {
+      captureEnarmAttribution(window.location.search);
+    }
+  }, [routePath]);
+
+  if (routePath === "/enarm/gracias" || routePath === "/enarm-2026/gracias") {
+    return <EnarmGracias />;
+  }
+
+  if (routePath === "/enarm/unirse-whatsapp") {
+    return <UnirseWhatsApp />;
+  }
+
+  if (routePath === "/enarm" || routePath === "/enarm-2026") {
+    return <EnarmLanding />;
+  }
 
   if (
     path === "/medicos-docentes" ||
