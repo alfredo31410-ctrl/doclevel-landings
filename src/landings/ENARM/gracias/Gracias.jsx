@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import doclevelLogo from "../../../assets/papa-primerizo/doclevel-logo.png";
 import doctorRaulImage from "../../../assets/papa-primerizo/doctor-papa-primerizo.png";
 import {
-  consumePendingEnarmLead,
+  consumePendingEnarmCompleteRegistration,
   getEnarmAttributionQuery,
 } from "../tracking";
 
@@ -12,7 +12,7 @@ export function EnarmGracias() {
     const source = new URLSearchParams(window.location.search).get("source");
 
     if (source === "activecampaign") {
-      consumePendingEnarmLead();
+      consumePendingEnarmCompleteRegistration();
     }
   }, []);
 
