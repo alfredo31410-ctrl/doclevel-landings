@@ -216,7 +216,7 @@ export function EnarmLanding() {
           </p>
 
           <div className="enarm-meta-grid">
-            <div><CalendarDays aria-hidden="true" /><span><strong>Viernes 7 de agosto</strong>Clase en vivo</span></div>
+            <div><CalendarDays aria-hidden="true" /><span><strong>Viernes 14 de agosto</strong>Clase en vivo</span></div>
             <div><Clock3 aria-hidden="true" /><span><strong>11:00 a. m.</strong>Hora CDMX</span></div>
             <div><GraduationCap aria-hidden="true" /><span><strong>Con el Dr. Raúl de Lira</strong>Experiencia y estrategia</span></div>
           </div>
