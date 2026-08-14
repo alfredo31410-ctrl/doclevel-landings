@@ -72,6 +72,31 @@ export function trackMetaCustomEventOnce(eventName, dedupeKey, parameters = {}) 
   return true;
 }
 
+const SPRINT_CHECKOUT_BASE_URL = "https://pay.hotmart.com/F107052904P?off=n0xyh3i0&checkoutMode=10";
+
+export function getEnarmSprintCheckoutUrl() {
+  const url = new URL(SPRINT_CHECKOUT_BASE_URL);
+  const attribution = getEnarmAttribution();
+  const allowedKeys = [...UTM_KEYS, "landing", "producto"];
+
+  for (const key of allowedKeys) {
+    const value = key === "landing" ? "enarm-sprint" : key === "producto" ? "sprint-enarm-2026" : attribution[key];
+    if (value) url.searchParams.set(key, value);
+  }
+
+  return url.toString();
+}
+
+export function trackEnarmSprintCheckoutClick() {
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+    window.fbq("trackCustom", "CheckoutButtonClick", {
+      content_name: "Sprint ENARM 2026",
+      value: 1987,
+      currency: "MXN",
+    });
+  }
+}
+
 export function trackRoutePageView(routePath) {
   if (lastTrackedPage === routePath) return;
 
@@ -82,6 +107,15 @@ export function trackRoutePageView(routePath) {
     trackMetaEvent("ViewContent", {
       content_name: "Clase gratis ENARM 2026",
       content_category: "Captación ENARM 2026",
+    });
+  }
+
+  if (routePath === "/enarm/sprint") {
+    trackMetaEventOnce("ViewContent", "enarm-sprint", {
+      content_name: "Sprint ENARM 2026",
+      content_category: "Venta directa ENARM 2026",
+      value: 1987,
+      currency: "MXN",
     });
   }
 }

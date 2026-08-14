@@ -16,6 +16,7 @@ import { DirectSaleLanding } from "./components/landing/DirectSaleLanding";
 import { EnarmLanding } from "./landings/ENARM/EnarmLanding";
 import { EnarmGracias } from "./landings/ENARM/gracias/Gracias";
 import { UnirseWhatsApp } from "./landings/ENARM/unirse-whatsapp/UnirseWhatsApp";
+import { SprintEnarmLanding } from "./landings/ENARM/sprint/SprintEnarmLanding";
 import { NotFoundLanding } from "./components/landing/NotFoundLanding";
 import { captureEnarmAttribution, trackRoutePageView } from "./landings/ENARM/tracking";
 
@@ -517,7 +518,7 @@ function App() {
   useEffect(() => {
     trackRoutePageView(routePath);
 
-    if (routePath === "/enarm") {
+    if (routePath === "/enarm" || routePath === "/enarm/sprint") {
       captureEnarmAttribution(window.location.search);
     }
   }, [routePath]);
@@ -532,6 +533,10 @@ function App() {
 
   if (routePath === "/enarm" || routePath === "/enarm-2026") {
     return <EnarmLanding />;
+  }
+
+  if (routePath === "/enarm/sprint") {
+    return <SprintEnarmLanding />;
   }
 
   if (
