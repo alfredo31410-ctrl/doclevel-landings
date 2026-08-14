@@ -10,13 +10,13 @@ import {
   FileCheck2,
   ShieldCheck,
   Sparkles,
-  Stethoscope,
   TimerReset,
   UsersRound,
 } from "lucide-react";
 
 import doclevelLogo from "../../../assets/papa-primerizo/doclevel-logo.png";
 import doctorRaulImage from "../../../assets/papa-primerizo/doctor-papa-primerizo.png";
+import enarmStudyGroupImage from "../../../assets/enarm/enarm-study-group.avif";
 import {
   getEnarmSprintCheckoutUrl,
   trackEnarmSprintCheckoutClick,
@@ -94,7 +94,7 @@ export function SprintEnarmLanding() {
         <div className="sprint-wrap"><p className="sprint-section-label">Método de respuesta</p><h2 id="method-title">Dos respuestas parecen correctas.<br /><span>¿Cuál descartas?</span></h2><div className="sprint-steps"><article><b>01</b><h3>Leer</h3><p>Identifica lo esencial del caso.</p></article><article><b>02</b><h3>Interpretar</h3><p>Conecta los datos con lo que sabes.</p></article><article><b>03</b><h3>Descartar</h3><p>Elimina lo que no explica el caso.</p></article><article><b>04</b><h3>Decidir</h3><p>Elige la mejor opción con criterio clínico.</p></article></div><div className="sprint-section-cta"><CheckoutButton>Inscribirme ahora</CheckoutButton></div></div>
       </section>
 
-      <section className="sprint-section sprint-about sprint-wrap" id="que-es" aria-labelledby="about-title"><div className="sprint-about-mark"><Stethoscope aria-hidden="true" /><span>ENTRENAMIENTO<br />DE EJECUCIÓN</span></div><div><p className="sprint-section-label">El Sprint</p><h2 id="about-title">¿Qué es Sprint ENARM 2026?</h2><p className="sprint-section-lead">Un entrenamiento intensivo en vivo diseñado para médicos que ya llevan una preparación previa y quieren usar su recta final para fortalecer su estrategia de respuesta.</p><div className="sprint-check-list"><span><Check /> Sesiones en vivo con especialistas</span><span><Check /> Práctica diaria con casos clínicos</span><span><Check /> Preguntas tipo examen</span><span><Check /> Análisis de distractores</span><span><Check /> Técnicas de resolución</span><span><Check /> Acompañamiento en tiempo real</span></div><div className="sprint-section-cta"><CheckoutButton>Inscribirme ahora</CheckoutButton></div></div></section>
+      <section className="sprint-section sprint-about sprint-wrap" id="que-es" aria-labelledby="about-title"><div className="sprint-about-mark"><img src={enarmStudyGroupImage} alt="Estudiantes de medicina preparándose juntos" /></div><div><p className="sprint-section-label">El Sprint</p><h2 id="about-title">¿Qué es Sprint ENARM 2026?</h2><p className="sprint-section-lead">Un entrenamiento intensivo en vivo diseñado para médicos que ya llevan una preparación previa y quieren usar su recta final para fortalecer su estrategia de respuesta.</p><div className="sprint-check-list"><span><Check /> Sesiones en vivo con especialistas</span><span><Check /> Práctica diaria con casos clínicos</span><span><Check /> Preguntas tipo examen</span><span><Check /> Análisis de distractores</span><span><Check /> Técnicas de resolución</span><span><Check /> Acompañamiento en tiempo real</span></div><div className="sprint-section-cta"><CheckoutButton>Inscribirme ahora</CheckoutButton></div></div></section>
 
       <section className="sprint-timeline sprint-section" id="como-funciona" aria-labelledby="timeline-title"><div className="sprint-wrap"><p className="sprint-section-label">Una recta final con dirección</p><h2 id="timeline-title">Cómo funciona</h2><div className="sprint-timeline-grid"><div><CalendarDays /><strong>20 DE AGOSTO</strong><span>Inicia el Sprint.</span></div><div><Clock3 /><strong>LUNES A VIERNES</strong><span>1 hora diaria.</span></div><div><UsersRound /><strong>EN VIVO CON ESPECIALISTAS</strong><span>Práctica, análisis y estrategia.</span></div><div><CalendarDays /><strong>18 DE SEPTIEMBRE</strong><span>Cierre del Sprint.</span></div></div></div></section>
 

@@ -3459,6 +3459,8 @@ h2,
 .sprint-statement .sprint-cta { margin-top:30px; font-size:.76rem; }
 .sprint-section-cta { margin-top:30px; }
 .sprint-section-cta--center { display:flex; justify-content:center; margin-top:35px; }
+.sprint-about-mark { position:relative; overflow:hidden; isolation:isolate; }
+.sprint-about-mark img { position:absolute; inset:0; z-index:-1; width:100%; height:100%; object-fit:cover; object-position:center; opacity:1; filter:none; }
 @media (max-width:560px) {
   .sprint-statement .sprint-cta { width:100%; }
 }
