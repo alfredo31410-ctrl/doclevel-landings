@@ -1,5 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/landings/papa-primerizo/gracias",
+      "destination": "/landings/las-primeras-hrs-de-tu-bebe/gracias",
+      "permanent": true
+    },
+    {
+      "source": "/landings/papa-primerizo",
+      "destination": "/landings/las-primeras-hrs-de-tu-bebe",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/landings/assets/:path*",
@@ -26,11 +38,11 @@
       "destination": "/doctor-papa-primerizo.png"
     },
     {
-      "source": "/landings/papa-primerizo",
+      "source": "/landings/las-primeras-hrs-de-tu-bebe",
       "destination": "/index.html"
     },
     {
-      "source": "/landings/papa-primerizo/:path*",
+      "source": "/landings/las-primeras-hrs-de-tu-bebe/:path*",
       "destination": "/index.html"
     },
     {

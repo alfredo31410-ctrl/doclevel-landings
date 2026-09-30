@@ -12,24 +12,13 @@ import {
 
 import doclevelLogo from "../../assets/papa-primerizo/doclevel-logo.png";
 import doctorPapaPrimerizo from "../../assets/papa-primerizo/doctor-papa-primerizo.png";
+import { getCurrencyFromPrice, trackMetaEvent } from "../../utils/tracking";
 
 const icons = {
   baby: Baby,
   ebook: BookOpen,
   ai: Bot,
 };
-
-function trackMetaEvent(eventName, parameters = {}) {
-  if (typeof window !== "undefined" && typeof window.fbq === "function") {
-    window.fbq("track", eventName, parameters);
-  }
-}
-
-function getCurrencyFromPrice(price = "") {
-  if (price.includes("USD")) return "USD";
-  if (price.includes("COP")) return "COP";
-  return "MXN";
-}
 
 function goToCheckout(landing) {
   trackMetaEvent("InitiateCheckout", {
