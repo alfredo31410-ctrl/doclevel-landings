@@ -4076,13 +4076,367 @@ h2,
 
 .baby-thanks-page {
   background:
-    radial-gradient(circle at 70% 30%, rgba(12, 168, 255, 0.26), transparent 32%),
-    linear-gradient(135deg, #020811, #061a35 65%, #031020);
+    radial-gradient(circle at 76% 30%, rgba(12, 168, 255, 0.3), transparent 31%),
+    radial-gradient(circle at 10% 78%, rgba(14, 126, 225, 0.12), transparent 29%),
+    linear-gradient(138deg, #02060d 0%, #061425 48%, #031122 100%);
+  min-height: 100svh;
 }
 
-.baby-thanks-page .cta-panel {
-  border-color: rgba(75, 191, 255, 0.3);
-  border-radius: 20px;
+.baby-thanks-header {
+  padding-top: 22px;
+}
+
+.baby-thanks-status svg {
+  color: #65d69a;
+  height: 17px;
+  width: 17px;
+}
+
+.baby-thanks-hero {
+  align-items: center;
+  display: grid;
+  gap: clamp(30px, 4vw, 70px);
+  grid-template-columns: minmax(0, 0.92fr) minmax(540px, 1.08fr);
+  margin: 0 auto;
+  max-width: 1440px;
+  min-height: calc(100svh - 98px);
+  padding: 24px clamp(24px, 5vw, 78px) 48px;
+  position: relative;
+  z-index: 4;
+}
+
+.baby-thanks-copy {
+  max-width: 650px;
+  padding: 22px 0;
+  position: relative;
+  z-index: 9;
+}
+
+.baby-thanks-copy h1 {
+  color: #ffffff;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(4.5rem, 7.4vw, 7.4rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.83;
+  margin: 0;
+  max-width: 7.7ch;
+  text-transform: uppercase;
+}
+
+.baby-thanks-copy h1 span {
+  color: var(--baby-blue);
+  display: block;
+  font-size: 0.88em;
+  margin-top: 0.09em;
+  text-shadow: 0 0 34px rgba(12, 168, 255, 0.24);
+}
+
+.baby-thanks-lead {
+  color: #e6f0f8;
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  font-weight: 650;
+  line-height: 1.55;
+  margin: 26px 0 21px;
+  max-width: 590px;
+}
+
+.baby-thanks-progress {
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(101, 202, 255, 0.18);
+  border-radius: 15px;
+  margin-bottom: 25px;
+  max-width: 565px;
+  padding: 15px 17px;
+}
+
+.baby-thanks-progress-label {
+  align-items: center;
+  color: #abc4d6;
+  display: flex;
+  font-size: 0.72rem;
+  font-weight: 800;
+  justify-content: space-between;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.baby-thanks-progress-label strong {
+  color: #67d9a0;
+  font-size: 0.8rem;
+}
+
+.baby-thanks-progress-track {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
+  height: 7px;
+  overflow: hidden;
+}
+
+.baby-thanks-progress-track span {
+  background: linear-gradient(90deg, #13aaff, #51d7ff 70%, #6ce1a5);
+  border-radius: inherit;
+  box-shadow: 0 0 18px rgba(31, 188, 255, 0.5);
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.baby-whatsapp-cta {
+  align-items: center;
+  background: linear-gradient(135deg, #17b9ff 0%, #0787ef 100%);
+  border: 1px solid rgba(156, 226, 255, 0.28);
+  border-radius: 999px;
+  box-shadow:
+    0 0 0 7px rgba(12, 168, 255, 0.1),
+    0 18px 42px rgba(0, 139, 241, 0.34);
+  color: #ffffff;
+  display: inline-flex;
+  font-size: clamp(0.84rem, 1.15vw, 0.98rem);
+  font-weight: 950;
+  gap: 12px;
+  justify-content: center;
+  min-height: 62px;
+  padding: 17px 27px;
+  text-transform: uppercase;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.baby-whatsapp-cta:hover {
+  box-shadow:
+    0 0 0 9px rgba(12, 168, 255, 0.13),
+    0 22px 54px rgba(0, 139, 241, 0.44);
+  transform: translateY(-3px);
+}
+
+.baby-whatsapp-cta svg {
+  height: 23px;
+  width: 23px;
+}
+
+.baby-thanks-note {
+  align-items: center;
+  color: #86a0b7;
+  display: flex;
+  font-size: 0.74rem;
+  font-weight: 650;
+  gap: 8px;
+  line-height: 1.4;
+  margin: 17px 0 0;
+}
+
+.baby-thanks-note svg {
+  color: #5ecaff;
+  flex: 0 0 auto;
+  height: 17px;
+  width: 17px;
+}
+
+.baby-thanks-steps {
+  display: flex;
+  gap: 34px;
+  margin-top: 30px;
+}
+
+.baby-thanks-steps > div {
+  align-items: center;
+  display: flex;
+  gap: 11px;
+  position: relative;
+}
+
+.baby-thanks-steps > div + div::before {
+  background: rgba(110, 199, 251, 0.2);
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: calc(100% + 8px);
+  top: 20px;
+  width: 18px;
+}
+
+.baby-thanks-steps > div > span {
+  align-items: center;
+  background: rgba(13, 153, 242, 0.14);
+  border: 1px solid rgba(91, 196, 255, 0.28);
+  border-radius: 50%;
+  color: #73d4ff;
+  display: flex;
+  flex: 0 0 auto;
+  font-size: 0.78rem;
+  font-weight: 950;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.baby-thanks-steps .is-complete > span {
+  background: rgba(65, 208, 132, 0.13);
+  border-color: rgba(102, 224, 160, 0.29);
+  color: #6fe0a4;
+}
+
+.baby-thanks-steps svg {
+  height: 18px;
+  width: 18px;
+}
+
+.baby-thanks-steps p,
+.baby-thanks-steps strong {
+  display: block;
+  margin: 0;
+}
+
+.baby-thanks-steps p {
+  color: #7895ae;
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.baby-thanks-steps strong {
+  color: #f5fbff;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+}
+
+.baby-thanks-visual {
+  align-self: stretch;
+  min-height: 690px;
+  position: relative;
+}
+
+.baby-thanks-visual .baby-visual-glow {
+  right: -30px;
+  top: 20px;
+}
+
+.baby-thanks-visual .baby-visual-ring-one {
+  right: 15px;
+  top: 68px;
+}
+
+.baby-thanks-visual .baby-visual-ring-two {
+  right: 75px;
+  top: 128px;
+}
+
+.baby-thanks-watermark {
+  color: rgba(133, 217, 255, 0.09);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(7rem, 13vw, 13rem);
+  letter-spacing: -0.045em;
+  line-height: 1;
+  position: absolute;
+  right: -20px;
+  top: 46px;
+  white-space: nowrap;
+}
+
+.baby-thanks-page .person-slot {
+  bottom: 0;
+  height: 610px;
+  right: -4px;
+  width: 550px;
+}
+
+.baby-thanks-page .person-slot img {
+  width: 550px;
+}
+
+.baby-thanks-chip-one {
+  right: 50px;
+  top: 72px;
+  transform: rotate(4deg);
+}
+
+.baby-thanks-chip-two {
+  right: -8px;
+  top: 157px;
+  transform: rotate(-3deg);
+}
+
+.baby-thanks-event {
+  background: rgba(250, 253, 255, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 27px 27px 54px 27px;
+  bottom: 18px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+  color: #07101a;
+  left: -20px;
+  max-width: 425px;
+  padding: 21px 24px 19px;
+  position: absolute;
+  width: min(63%, 425px);
+  z-index: 8;
+}
+
+.baby-thanks-event > div:not(.baby-thanks-event-title) {
+  align-items: center;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 27px 1fr;
+  min-height: 46px;
+}
+
+.baby-thanks-event > div + div {
+  border-top: 1px solid #d7e3ee;
+}
+
+.baby-thanks-event svg {
+  color: #079bf6;
+  height: 23px;
+  width: 23px;
+}
+
+.baby-thanks-event p,
+.baby-thanks-event h2 {
+  margin: 0;
+}
+
+.baby-thanks-event p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 7px;
+}
+
+.baby-thanks-event strong,
+.baby-thanks-event p span {
+  display: block;
+  font-size: 0.79rem;
+  line-height: 1.2;
+}
+
+.baby-thanks-event strong {
+  color: #07101a;
+  font-weight: 950;
+}
+
+.baby-thanks-event p span {
+  color: #394653;
+  font-weight: 650;
+}
+
+.baby-thanks-event-title {
+  border-bottom: 1px solid #bfd4e7;
+  margin-bottom: 10px;
+  padding: 0 0 11px 4px;
+}
+
+.baby-thanks-event-title > span {
+  color: #078eea;
+  display: block;
+  font-size: 0.64rem;
+  font-weight: 950;
+  letter-spacing: 0.15em;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.baby-thanks-event-title h2 {
+  color: #07101a;
+  font-size: clamp(1.12rem, 1.8vw, 1.48rem);
+  letter-spacing: -0.035em;
 }
 
 @media (max-width: 1120px) {
@@ -4330,7 +4684,199 @@ h2,
 @media (prefers-reduced-motion: reduce) {
   .baby-primary-cta,
   .baby-bottom-cta button,
-  .baby-signal-card {
+  .baby-signal-card,
+  .baby-whatsapp-cta {
     transition: none;
+  }
+}
+
+@media (max-width: 1120px) {
+  .baby-thanks-hero {
+    grid-template-columns: minmax(0, 0.92fr) minmax(470px, 1.08fr);
+    padding-inline: 30px;
+  }
+
+  .baby-thanks-copy h1 {
+    font-size: clamp(4rem, 7.8vw, 6.1rem);
+  }
+
+  .baby-thanks-visual {
+    min-height: 650px;
+  }
+
+  .baby-thanks-page .person-slot {
+    height: 555px;
+    right: -48px;
+    width: 495px;
+  }
+
+  .baby-thanks-page .person-slot img {
+    width: 495px;
+  }
+
+  .baby-thanks-event {
+    left: 0;
+    width: min(68%, 390px);
+  }
+}
+
+@media (max-width: 860px) {
+  .baby-thanks-hero {
+    gap: 0;
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 54px 18px 34px;
+  }
+
+  .baby-thanks-copy {
+    max-width: 720px;
+    padding: 0;
+  }
+
+  .baby-thanks-copy h1 {
+    font-size: clamp(4rem, 14vw, 6.6rem);
+  }
+
+  .baby-thanks-visual {
+    min-height: 680px;
+    width: 100%;
+  }
+
+  .baby-thanks-page .person-slot {
+    height: 500px;
+    right: -24px;
+    width: 455px;
+  }
+
+  .baby-thanks-page .person-slot img {
+    width: 455px;
+  }
+
+  .baby-thanks-watermark {
+    right: 4px;
+    top: 74px;
+  }
+
+  .baby-thanks-chip-one {
+    right: 24px;
+    top: 64px;
+  }
+
+  .baby-thanks-chip-two {
+    right: 0;
+    top: 143px;
+  }
+
+  .baby-thanks-event {
+    bottom: 12px;
+    left: 0;
+    width: min(66%, 390px);
+  }
+}
+
+@media (max-width: 640px) {
+  .baby-thanks-header {
+    padding-top: 16px;
+  }
+
+  .baby-thanks-status {
+    justify-content: center;
+    max-width: none;
+  }
+
+  .baby-thanks-hero {
+    padding-top: 43px;
+  }
+
+  .baby-thanks-copy h1 {
+    font-size: clamp(3.55rem, 17vw, 5rem);
+  }
+
+  .baby-thanks-lead {
+    font-size: 0.97rem;
+    margin-top: 22px;
+  }
+
+  .baby-whatsapp-cta {
+    min-height: 60px;
+    padding-inline: 19px;
+    width: 100%;
+  }
+
+  .baby-thanks-note {
+    align-items: flex-start;
+  }
+
+  .baby-thanks-steps {
+    gap: 24px;
+    margin-top: 27px;
+  }
+
+  .baby-thanks-steps > div + div::before {
+    display: none;
+  }
+
+  .baby-thanks-steps > div > span {
+    height: 36px;
+    width: 36px;
+  }
+
+  .baby-thanks-visual {
+    min-height: 650px;
+  }
+
+  .baby-thanks-visual .baby-visual-glow {
+    height: 430px;
+    right: -70px;
+    top: 55px;
+    width: 430px;
+  }
+
+  .baby-thanks-visual .baby-visual-ring-one {
+    height: 370px;
+    right: -35px;
+    top: 85px;
+    width: 370px;
+  }
+
+  .baby-thanks-visual .baby-visual-ring-two {
+    display: none;
+  }
+
+  .baby-thanks-watermark {
+    font-size: 7.2rem;
+    right: -3px;
+    top: 88px;
+  }
+
+  .baby-thanks-page .person-slot {
+    bottom: 92px;
+    height: 402px;
+    right: -42px;
+    width: 382px;
+  }
+
+  .baby-thanks-page .person-slot img {
+    width: 382px;
+  }
+
+  .baby-thanks-chip-one {
+    right: 16px;
+    top: 64px;
+  }
+
+  .baby-thanks-chip-two {
+    left: 3px;
+    right: auto;
+    top: 171px;
+  }
+
+  .baby-thanks-event {
+    border-radius: 22px 22px 38px 22px;
+    bottom: 0;
+    left: 0;
+    max-width: none;
+    padding: 18px 19px 16px;
+    width: 100%;
   }
 }
