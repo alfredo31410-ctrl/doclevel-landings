@@ -51,6 +51,7 @@ src/
 - `/landings/primer-mes-bebe-mx`
 - `/landings/ebook-nace-un-bebe`
 - `/landings/agente-ia-doctores`
+- `/landings/abc-consulta-pediatrica`
 - `/landings/enarm`
 - `/landings/enarm/gracias`
 - `/landings/enarm/sprint`
@@ -132,3 +133,13 @@ npm run build
 ```
 
 Vercel puede construir el sitio con `npm run build`. Las rutas se sirven desde la misma app con las rewrites de `vercel.json`.
+
+## El ABC de la consulta pediátrica
+
+La campaña usa una landing informativa de venta directa y continúa el cierre
+con un asesor por WhatsApp. El número y el mensaje inicial se administran desde
+`sales` en `src/landings/abc-consulta-pediatrica/config.js`.
+
+El tracking incluye `PageView`, `ViewContent`, `WhatsAppSalesIntent` y
+`Contact`. También conserva UTMs, IDs de anuncios, `fbclid` y `gclid`, y
+refleja los eventos de la campaña en `dataLayer`.

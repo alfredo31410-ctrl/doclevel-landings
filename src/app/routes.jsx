@@ -1,5 +1,6 @@
 import { NotFoundLanding } from "../components/landing/NotFoundLanding";
 import AgenteIaDoctoresPage from "../landings/agente-ia-doctores/page";
+import AbcConsultaPediatricaPage from "../landings/abc-consulta-pediatrica/SalesLanding";
 import EbookNaceUnBebePage from "../landings/ebook-nace-un-bebe/page";
 import EnarmPage from "../landings/ENARM/page";
 import EnarmGraciasPage from "../landings/ENARM/gracias/page";
@@ -69,6 +70,7 @@ register(
 register(["/landings/primer-mes-bebe-mx"], PrimerMesBebePage);
 register(["/landings/ebook-nace-un-bebe"], EbookNaceUnBebePage);
 register(["/landings/agente-ia-doctores"], AgenteIaDoctoresPage);
+register(["/landings/abc-consulta-pediatrica"], AbcConsultaPediatricaPage);
 
 export function resolveRoute(pathname) {
   const path = normalizePath(pathname);
