@@ -108,15 +108,15 @@
   transform: none;
 }
 
-.abc-floating-whatsapp {
+.abc-floating-checkout {
   align-items: center;
-  background: linear-gradient(135deg, #24cc78, #12a860);
+  background: linear-gradient(135deg, #0aaef6, #0879ed);
   border: 1px solid rgba(255, 255, 255, 0.48);
   border-radius: 999px;
   bottom: 22px;
   box-shadow:
-    0 0 0 7px rgba(27, 190, 108, 0.12),
-    0 16px 38px rgba(5, 93, 50, 0.3);
+    0 0 0 7px rgba(8, 126, 237, 0.12),
+    0 16px 38px rgba(5, 83, 166, 0.3);
   color: #ffffff;
   display: inline-flex;
   font-size: 0.78rem;
@@ -131,17 +131,81 @@
   z-index: 50;
 }
 
-.abc-floating-whatsapp:hover {
+.abc-floating-checkout:hover {
   box-shadow:
-    0 0 0 9px rgba(27, 190, 108, 0.15),
-    0 20px 48px rgba(5, 93, 50, 0.38);
+    0 0 0 9px rgba(8, 126, 237, 0.15),
+    0 20px 48px rgba(5, 83, 166, 0.38);
   transform: translateY(-3px);
 }
 
-.abc-floating-whatsapp svg {
+.abc-floating-checkout svg {
   flex: 0 0 auto;
   height: 23px;
   width: 23px;
+}
+
+.abc-conversion-actions {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  max-width: 470px;
+}
+
+.abc-conversion-actions > span {
+  color: #65798c;
+  font-size: 0.74rem;
+  font-weight: 700;
+  margin: 14px 0 9px;
+}
+
+.abc-checkout-cta,
+.abc-whatsapp-secondary-cta {
+  align-items: center;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 900;
+  gap: 11px;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.abc-checkout-cta {
+  background: linear-gradient(105deg, #05aef9, #0879ed);
+  border: 0;
+  box-shadow: 0 16px 34px rgba(3, 126, 227, 0.26);
+  color: #ffffff;
+  font-size: 0.92rem;
+  min-height: 62px;
+  padding: 16px 26px;
+}
+
+.abc-checkout-cta:hover {
+  box-shadow: 0 20px 44px rgba(3, 126, 227, 0.36);
+  transform: translateY(-2px);
+}
+
+.abc-checkout-cta svg,
+.abc-whatsapp-secondary-cta svg {
+  flex: 0 0 auto;
+  height: 20px;
+  width: 20px;
+}
+
+.abc-whatsapp-secondary-cta {
+  background: #ffffff;
+  border: 1px solid rgba(18, 168, 96, 0.34);
+  color: #0c8b51;
+  font-size: 0.78rem;
+  min-height: 50px;
+  padding: 12px 20px;
+}
+
+.abc-whatsapp-secondary-cta:hover {
+  box-shadow: 0 12px 28px rgba(18, 168, 96, 0.14);
+  transform: translateY(-2px);
 }
 
 .abc-sales-disclosure {
@@ -299,33 +363,14 @@
 }
 
 .abc-sales-close-action {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   min-width: min(100%, 360px);
 }
 
-.abc-whatsapp-sales-cta {
-  align-items: center;
-  background: linear-gradient(115deg, #21c775, #12a65f);
-  border: 0;
-  border-radius: 999px;
-  box-shadow: 0 17px 42px rgba(16, 169, 95, 0.26);
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-flex;
-  font-size: 0.87rem;
-  font-weight: 900;
-  gap: 11px;
-  justify-content: center;
-  min-height: 64px;
-  padding: 16px 25px;
-  text-align: center;
-  text-decoration: none;
+.abc-checkout-cta-final {
   width: 100%;
-}
-
-.abc-whatsapp-sales-cta svg {
-  flex: 0 0 auto;
-  height: 21px;
-  width: 21px;
 }
 
 .abc-sales-close-action > p {
@@ -342,6 +387,14 @@
 .abc-sales-close-action > p svg {
   height: 16px;
   width: 16px;
+}
+
+.abc-whatsapp-secondary-cta-dark {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(36, 204, 120, 0.38);
+  color: #6de0a5;
+  margin-top: 17px;
+  width: 100%;
 }
 
 @media (max-width: 900px) {
@@ -399,10 +452,16 @@
     border-top: 1px solid #e3edf5;
   }
 
-  .abc-sales-page .abc-primary-cta {
+  .abc-conversion-actions,
+  .abc-checkout-cta,
+  .abc-whatsapp-secondary-cta {
+    width: 100%;
+  }
+
+  .abc-checkout-cta,
+  .abc-whatsapp-secondary-cta {
     font-size: 0.82rem;
     padding-inline: 18px;
-    width: 100%;
   }
 
   .abc-sales-intro,
@@ -424,7 +483,7 @@
     padding-bottom: 100px;
   }
 
-  .abc-floating-whatsapp {
+  .abc-floating-checkout {
     bottom: 15px;
     font-size: 0.75rem;
     justify-content: center;
@@ -436,7 +495,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .abc-floating-whatsapp {
+  .abc-floating-checkout,
+  .abc-checkout-cta,
+  .abc-whatsapp-secondary-cta {
     transition: none;
   }
 }

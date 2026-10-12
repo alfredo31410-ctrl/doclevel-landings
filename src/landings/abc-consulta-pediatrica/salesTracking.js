@@ -59,6 +59,21 @@ function getAbcAttribution() {
   }
 }
 
+function getCurrentAbcAttribution() {
+  const attribution = getAbcAttribution();
+
+  if (typeof window === "undefined") return attribution;
+
+  const params = new URLSearchParams(window.location.search);
+
+  ATTRIBUTION_KEYS.forEach((key) => {
+    const value = params.get(key);
+    if (value) attribution[key] = value;
+  });
+
+  return attribution;
+}
+
 function pushDataLayer(event, parameters = {}) {
   if (typeof window === "undefined") return;
   window.dataLayer = window.dataLayer || [];
@@ -69,7 +84,7 @@ function salesParameters(extra = {}) {
   return {
     content_name: abcConsultaConfig.title,
     content_category: "Venta directa por WhatsApp",
-    ...getAbcAttribution(),
+    ...getCurrentAbcAttribution(),
     ...extra,
   };
 }
@@ -99,8 +114,46 @@ export function trackAbcWhatsAppSalesIntent(location = "unknown") {
 
   return trackMetaEventOnce(
     "Contact",
-    `${registrationTrackingKey}:sales:${location}`,
+    `${registrationTrackingKey}:sales:whatsapp`,
     parameters
   );
+}
+
+export function getAbcCheckoutUrl() {
+  const checkoutUrl = abcConsultaConfig.sales.checkoutUrl;
+  if (!checkoutUrl) return "";
+
+  try {
+    const url = new URL(checkoutUrl);
+    const attribution = getCurrentAbcAttribution();
+
+    ATTRIBUTION_KEYS.forEach((key) => {
+      const value = attribution[key];
+      if (value) url.searchParams.set(key, value);
+    });
+
+    return url.toString();
+  } catch {
+    return checkoutUrl;
+  }
+}
+
+export function trackAbcInitiateCheckout(location = "unknown") {
+  const parameters = salesParameters({
+    content_category: "Curso",
+    currency: "MXN",
+    cta_location: location,
+    landing_slug: registrationTrackingKey,
+  });
+
+  const tracked = trackMetaEventOnce(
+    "InitiateCheckout",
+    `${registrationTrackingKey}:checkout:${location}`,
+    parameters
+  );
+
+  if (tracked) pushDataLayer("initiate_checkout", parameters);
+
+  return tracked;
 }
 

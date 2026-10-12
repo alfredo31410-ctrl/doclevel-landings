@@ -7,6 +7,7 @@ import {
   CheckCircle2,
   CircleDollarSign,
   ClipboardCheck,
+  CreditCard,
   Eye,
   HeartHandshake,
   ListChecks,
@@ -24,6 +25,8 @@ import { LogoExit } from "../../components/landing/LogoExit";
 import { abcConsultaConfig } from "./config";
 import {
   captureAbcAttribution,
+  getAbcCheckoutUrl,
+  trackAbcInitiateCheckout,
   trackAbcSalesView,
   trackAbcWhatsAppSalesIntent,
 } from "./salesTracking";
@@ -110,6 +113,30 @@ function WhatsAppCta({ location, className = "abc-primary-cta", children }) {
   );
 }
 
+function CheckoutCta({ location, className = "abc-checkout-cta", children }) {
+  const href = getAbcCheckoutUrl();
+
+  if (!href) {
+    return (
+      <button className={className} type="button" disabled>
+        Inscripción pendiente de conectar
+      </button>
+    );
+  }
+
+  return (
+    <a
+      className={className}
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      onClick={() => trackAbcInitiateCheckout(location)}
+    >
+      {children}
+    </a>
+  );
+}
+
 export default function AbcConsultaPediatricaSalesLanding() {
   useEffect(() => {
     document.title = `${abcConsultaConfig.title} | DocLevel`;
@@ -155,16 +182,25 @@ export default function AbcConsultaPediatricaSalesLanding() {
             <div><ClipboardCheck aria-hidden="true" /><span>Consulta de inicio a cierre</span></div>
           </div>
 
-          <WhatsAppCta location="hero">
-            <MessageCircle aria-hidden="true" />
-            Quiero recibir información y costo
-            <ArrowRight aria-hidden="true" />
-          </WhatsAppCta>
+          <div className="abc-conversion-actions">
+            <CheckoutCta location="hero">
+              <CreditCard aria-hidden="true" />
+              Inscribirme ahora
+              <ArrowRight aria-hidden="true" />
+            </CheckoutCta>
+
+            <span>¿Tienes dudas o quieres conocer más detalles?</span>
+
+            <WhatsAppCta location="hero" className="abc-whatsapp-secondary-cta">
+              <MessageCircle aria-hidden="true" />
+              Recibir información por WhatsApp
+            </WhatsAppCta>
+          </div>
 
           <p className="abc-sales-disclosure">
             <CircleDollarSign aria-hidden="true" />
-            Al continuar por WhatsApp, un asesor te compartirá el temario,
-            inversión y opciones de acceso para que decidas si es para ti.
+            Inscripción directa mediante el checkout seguro de Hotmart. Si
+            necesitas ayuda, nuestro equipo puede orientarte por WhatsApp.
           </p>
         </div>
 
@@ -277,19 +313,23 @@ export default function AbcConsultaPediatricaSalesLanding() {
         </div>
 
         <div className="abc-sales-close-action">
-          <WhatsAppCta location="final" className="abc-whatsapp-sales-cta">
-            <MessageCircle aria-hidden="true" />
-            Ver temario, costo e inscripción
+          <CheckoutCta location="final" className="abc-checkout-cta abc-checkout-cta-final">
+            <CreditCard aria-hidden="true" />
+            Inscribirme ahora
             <ArrowRight aria-hidden="true" />
+          </CheckoutCta>
+          <p><ShieldCheck aria-hidden="true" /> Pago seguro mediante Hotmart.</p>
+          <WhatsAppCta location="final" className="abc-whatsapp-secondary-cta abc-whatsapp-secondary-cta-dark">
+            <MessageCircle aria-hidden="true" />
+            Prefiero recibir información por WhatsApp
           </WhatsAppCta>
-          <p><ShieldCheck aria-hidden="true" /> Atención informativa y comercial por WhatsApp.</p>
         </div>
       </section>
 
-      <WhatsAppCta location="floating" className="abc-floating-whatsapp">
-        <MessageCircle aria-hidden="true" />
-        <span>Hablar por WhatsApp</span>
-      </WhatsAppCta>
+      <CheckoutCta location="floating" className="abc-floating-checkout">
+        <CreditCard aria-hidden="true" />
+        <span>Inscribirme ahora</span>
+      </CheckoutCta>
     </main>
   );
 }
