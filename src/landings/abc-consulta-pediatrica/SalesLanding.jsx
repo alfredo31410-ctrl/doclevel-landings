@@ -1,18 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   BadgeCheck,
   BookOpenCheck,
+  CalendarDays,
   Check,
   CheckCircle2,
-  CircleDollarSign,
   ClipboardCheck,
-  CreditCard,
+  Clock3,
   Eye,
   HeartHandshake,
   ListChecks,
-  MessageCircle,
   MessageCircleQuestion,
+  Monitor,
   Search,
   ShieldCheck,
   Sparkles,
@@ -22,14 +22,13 @@ import {
 
 import doctorImage from "../../assets/papa-primerizo/doctor-papa-primerizo.png";
 import { LogoExit } from "../../components/landing/LogoExit";
+import { ActiveCampaignModal } from "./ActiveCampaignModal";
 import { abcConsultaConfig } from "./config";
 import {
   captureAbcAttribution,
-  getAbcCheckoutUrl,
-  trackAbcInitiateCheckout,
-  trackAbcSalesView,
-  trackAbcWhatsAppSalesIntent,
-} from "./salesTracking";
+  trackAbcRegistrationIntent,
+  trackAbcRegistrationView,
+} from "./tracking";
 import "./sales.css";
 
 const method = [
@@ -74,81 +73,25 @@ const idealFor = [
   "Profesionales de la salud que trabajan con niños y familias.",
 ];
 
-function getWhatsAppUrl() {
-  const { whatsappUrl, whatsappMessage } = abcConsultaConfig.sales;
-  if (!whatsappUrl) return "";
+export default function AbcConsultaPediatricaLanding() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  try {
-    const url = new URL(whatsappUrl);
-    if (!url.searchParams.has("text")) {
-      url.searchParams.set("text", whatsappMessage);
-    }
-    return url.toString();
-  } catch {
-    return whatsappUrl;
-  }
-}
-
-function WhatsAppCta({ location, className = "abc-primary-cta", children }) {
-  const href = getWhatsAppUrl();
-
-  if (!href) {
-    return (
-      <button className={className} type="button" disabled>
-        WhatsApp pendiente de conectar
-      </button>
-    );
-  }
-
-  return (
-    <a
-      className={className}
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      onClick={() => trackAbcWhatsAppSalesIntent(location)}
-    >
-      {children}
-    </a>
-  );
-}
-
-function CheckoutCta({ location, className = "abc-checkout-cta", children }) {
-  const href = getAbcCheckoutUrl();
-
-  if (!href) {
-    return (
-      <button className={className} type="button" disabled>
-        Inscripción pendiente de conectar
-      </button>
-    );
-  }
-
-  return (
-    <a
-      className={className}
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      onClick={() => trackAbcInitiateCheckout(location)}
-    >
-      {children}
-    </a>
-  );
-}
-
-export default function AbcConsultaPediatricaSalesLanding() {
   useEffect(() => {
-    document.title = `${abcConsultaConfig.title} | DocLevel`;
+    document.title = `${abcConsultaConfig.title} | Clase gratuita | DocLevel`;
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute(
         "content",
-        "Programa práctico para aprender a conducir la consulta pediátrica con estructura, cooperación y claridad. Solicita temario, costo e inscripción por WhatsApp."
+        "Clase gratuita para aprender a conducir la consulta pediátrica con estructura, cooperación y claridad. Reserva tu lugar para el 2 de noviembre de 2026."
       );
     captureAbcAttribution(window.location.search);
-    trackAbcSalesView();
+    trackAbcRegistrationView();
   }, []);
+
+  const openRegistration = (location) => {
+    trackAbcRegistrationIntent(location);
+    setIsModalOpen(true);
+  };
 
   return (
     <main className="abc-page abc-sales-page">
@@ -156,51 +99,57 @@ export default function AbcConsultaPediatricaSalesLanding() {
         <LogoExit />
         <div className="abc-sales-badge">
           <BadgeCheck aria-hidden="true" />
-          Formación práctica DocLevel
+          Clase gratuita · 100% en línea
         </div>
       </header>
 
-      <section className="abc-hero abc-sales-hero" aria-labelledby="abc-sales-title">
+      <section className="abc-hero abc-sales-hero" aria-labelledby="abc-title">
         <div className="abc-hero-copy">
           <p className="abc-kicker">
             <BookOpenCheck aria-hidden="true" />
-            Programa para médicos y profesionales de la salud
+            Clase para médicos y profesionales de la salud
           </p>
 
-          <h1 id="abc-sales-title">
+          <h1 id="abc-title">
             La consulta pediátrica <span>también se aprende.</span>
           </h1>
 
           <p className="abc-lead">
-            Aprende una estructura práctica para conectar, observar, explorar y
-            cerrar cada consulta con mayor claridad, cooperación y confianza.
+            Participa en esta clase gratuita y aprende una estructura práctica
+            para conectar, observar, explorar y cerrar cada consulta con mayor
+            claridad, cooperación y confianza.
           </p>
 
-          <div className="abc-sales-proof">
-            <div><Stethoscope aria-hidden="true" /><span>Método clínico aplicable</span></div>
-            <div><Users aria-hidden="true" /><span>Enfoque en niño y familia</span></div>
-            <div><ClipboardCheck aria-hidden="true" /><span>Consulta de inicio a cierre</span></div>
+          <div className="abc-sales-proof" aria-label="Datos de la clase">
+            <div>
+              <CalendarDays aria-hidden="true" />
+              <span>Lunes 2 de noviembre de 2026</span>
+            </div>
+            <div>
+              <Clock3 aria-hidden="true" />
+              <span>1:00 p. m. · Hora CDMX</span>
+            </div>
+            <div>
+              <Monitor aria-hidden="true" />
+              <span>Clase gratuita en línea</span>
+            </div>
           </div>
 
           <div className="abc-conversion-actions">
-            <CheckoutCta location="hero">
-              <CreditCard aria-hidden="true" />
-              Inscribirme ahora
+            <button
+              className="abc-checkout-cta"
+              type="button"
+              onClick={() => openRegistration("hero")}
+            >
+              Reservar mi lugar gratis
               <ArrowRight aria-hidden="true" />
-            </CheckoutCta>
-
-            <span>¿Tienes dudas o quieres conocer más detalles?</span>
-
-            <WhatsAppCta location="hero" className="abc-whatsapp-secondary-cta">
-              <MessageCircle aria-hidden="true" />
-              Recibir información por WhatsApp
-            </WhatsAppCta>
+            </button>
           </div>
 
           <p className="abc-sales-disclosure">
-            <CircleDollarSign aria-hidden="true" />
-            Inscripción directa mediante el checkout seguro de Hotmart. Si
-            necesitas ayuda, nuestro equipo puede orientarte por WhatsApp.
+            <ShieldCheck aria-hidden="true" />
+            Registro gratuito. Recibirás el acceso y los recordatorios de la
+            clase después de completar tus datos.
           </p>
         </div>
 
@@ -215,17 +164,17 @@ export default function AbcConsultaPediatricaSalesLanding() {
           </span>
           <img src={doctorImage} alt={abcConsultaConfig.instructor} />
           <aside className="abc-speaker-card">
-            <span>Programa impartido por</span>
+            <span>Clase impartida por</span>
             <strong>{abcConsultaConfig.instructor}</strong>
             <small>DocLevel</small>
           </aside>
         </div>
       </section>
 
-      <section className="abc-sales-intro" aria-labelledby="abc-sales-intro-title">
+      <section className="abc-sales-intro" aria-labelledby="abc-intro-title">
         <div className="abc-section-heading">
           <p>Más que llegar a un diagnóstico</p>
-          <h2 id="abc-sales-intro-title">La forma de conducir la consulta también importa.</h2>
+          <h2 id="abc-intro-title">La forma de conducir la consulta también importa.</h2>
           <span>
             En pediatría no solo evalúas síntomas. También necesitas ganarte la
             confianza del niño, obtener información útil, realizar una buena
@@ -256,10 +205,10 @@ export default function AbcConsultaPediatricaSalesLanding() {
         </div>
       </section>
 
-      <section className="abc-method" aria-labelledby="abc-sales-method-title">
+      <section className="abc-method" aria-labelledby="abc-method-title">
         <div className="abc-section-heading abc-section-heading-light">
-          <p>Lo que trabajarás en el programa</p>
-          <h2 id="abc-sales-method-title">No es solo “tener mano” con los niños. Es estructura.</h2>
+          <p>Lo que aprenderás en la clase</p>
+          <h2 id="abc-method-title">No es solo “tener mano” con los niños. Es estructura.</h2>
           <span>Un sistema en cinco momentos para conducir la consulta con intención.</span>
         </div>
 
@@ -275,10 +224,10 @@ export default function AbcConsultaPediatricaSalesLanding() {
         </div>
       </section>
 
-      <section className="abc-sales-details" aria-labelledby="abc-sales-details-title">
+      <section className="abc-sales-details" aria-labelledby="abc-details-title">
         <div className="abc-sales-details-copy">
-          <p className="abc-kicker"><Sparkles aria-hidden="true" /> Una formación pensada para la práctica</p>
-          <h2 id="abc-sales-details-title">¿Qué puedes llevarte?</h2>
+          <p className="abc-kicker"><Sparkles aria-hidden="true" /> Una clase pensada para la práctica</p>
+          <h2 id="abc-details-title">¿Qué puedes llevarte?</h2>
           <p>
             El objetivo es ayudarte a convertir conceptos clínicos y de
             comunicación en una secuencia que puedas aplicar de forma consciente.
@@ -291,7 +240,7 @@ export default function AbcConsultaPediatricaSalesLanding() {
         </div>
 
         <aside className="abc-audience-card">
-          <p>Este programa puede ser para ti si eres:</p>
+          <p>Esta clase puede ser para ti si eres:</p>
           <h2>Médico o profesional que atiende a pacientes pediátricos.</h2>
           <ul>
             {idealFor.map((profile) => (
@@ -303,34 +252,43 @@ export default function AbcConsultaPediatricaSalesLanding() {
 
       <section className="abc-sales-close">
         <div className="abc-sales-close-copy">
-          <p>El siguiente paso</p>
-          <h2>Conoce el programa antes de tomar una decisión.</h2>
+          <p>Reserva tu lugar</p>
+          <h2>Da el siguiente paso en tu consulta pediátrica.</h2>
           <span>
-            Escríbenos por WhatsApp. Te compartiremos el temario completo, la
-            inversión, modalidad y proceso de inscripción. Podrás resolver tus
-            dudas directamente con nuestro equipo.
+            Regístrate gratis para asistir el lunes 2 de noviembre de 2026 a
+            la 1:00 p. m., hora CDMX. Después de completar tus datos podrás
+            entrar al grupo oficial de WhatsApp para recibir el acceso y los
+            recordatorios.
           </span>
         </div>
 
         <div className="abc-sales-close-action">
-          <CheckoutCta location="final" className="abc-checkout-cta abc-checkout-cta-final">
-            <CreditCard aria-hidden="true" />
-            Inscribirme ahora
+          <button
+            className="abc-checkout-cta abc-checkout-cta-final"
+            type="button"
+            onClick={() => openRegistration("final")}
+          >
+            <ClipboardCheck aria-hidden="true" />
+            Registrarme gratis
             <ArrowRight aria-hidden="true" />
-          </CheckoutCta>
-          <p><ShieldCheck aria-hidden="true" /> Pago seguro mediante Hotmart.</p>
-          <WhatsAppCta location="final" className="abc-whatsapp-secondary-cta abc-whatsapp-secondary-cta-dark">
-            <MessageCircle aria-hidden="true" />
-            Prefiero recibir información por WhatsApp
-          </WhatsAppCta>
+          </button>
+          <p><ShieldCheck aria-hidden="true" /> Registro gratuito y cupo sujeto a disponibilidad.</p>
         </div>
       </section>
 
-      <CheckoutCta location="floating" className="abc-floating-checkout">
-        <CreditCard aria-hidden="true" />
-        <span>Inscribirme ahora</span>
-      </CheckoutCta>
+      <button
+        className="abc-floating-checkout"
+        type="button"
+        onClick={() => openRegistration("floating")}
+      >
+        <ClipboardCheck aria-hidden="true" />
+        <span>Registrarme gratis</span>
+      </button>
+
+      <ActiveCampaignModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </main>
   );
 }
-
