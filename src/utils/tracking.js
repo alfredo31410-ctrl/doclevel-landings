@@ -1,15 +1,24 @@
 const trackedMetaEvents = new Set();
 
-export function trackMetaEvent(eventName, parameters = {}) {
+export function trackMetaEvent(eventName, parameters = {}, eventOptions = {}) {
   if (typeof window !== "undefined" && typeof window.fbq === "function") {
-    window.fbq("track", eventName, parameters);
+    if (Object.keys(eventOptions).length > 0) {
+      window.fbq("track", eventName, parameters, eventOptions);
+    } else {
+      window.fbq("track", eventName, parameters);
+    }
     return true;
   }
 
   return false;
 }
 
-export function trackMetaEventOnce(eventName, dedupeKey, parameters = {}) {
+export function trackMetaEventOnce(
+  eventName,
+  dedupeKey,
+  parameters = {},
+  eventOptions = {}
+) {
   if (
     typeof window === "undefined" ||
     typeof window.fbq !== "function"
@@ -32,7 +41,7 @@ export function trackMetaEventOnce(eventName, dedupeKey, parameters = {}) {
   }
 
   trackedMetaEvents.add(eventKey);
-  return trackMetaEvent(eventName, parameters);
+  return trackMetaEvent(eventName, parameters, eventOptions);
 }
 
 export function getCurrencyFromPrice(price = "") {

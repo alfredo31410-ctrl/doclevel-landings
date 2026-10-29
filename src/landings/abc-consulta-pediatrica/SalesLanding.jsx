@@ -26,8 +26,7 @@ import { ActiveCampaignModal } from "./ActiveCampaignModal";
 import { abcConsultaConfig } from "./config";
 import {
   captureAbcAttribution,
-  trackAbcRegistrationIntent,
-  trackAbcRegistrationView,
+  configureAbcMetaPixel,
 } from "./tracking";
 import "./sales.css";
 
@@ -85,11 +84,10 @@ export default function AbcConsultaPediatricaLanding() {
         "Clase gratuita para aprender a conducir la consulta pediátrica con estructura, cooperación y claridad. Reserva tu lugar para el 2 de noviembre de 2026."
       );
     captureAbcAttribution(window.location.search);
-    trackAbcRegistrationView();
+    configureAbcMetaPixel();
   }, []);
 
-  const openRegistration = (location) => {
-    trackAbcRegistrationIntent(location);
+  const openRegistration = () => {
     setIsModalOpen(true);
   };
 
@@ -99,7 +97,10 @@ export default function AbcConsultaPediatricaLanding() {
         <LogoExit />
         <div className="abc-sales-badge">
           <BadgeCheck aria-hidden="true" />
-          Clase gratuita · 100% en línea
+          <span>
+            Clase gratuita
+            <span className="abc-badge-modality"> · 100% en línea</span>
+          </span>
         </div>
       </header>
 
@@ -139,7 +140,7 @@ export default function AbcConsultaPediatricaLanding() {
             <button
               className="abc-checkout-cta"
               type="button"
-              onClick={() => openRegistration("hero")}
+              onClick={openRegistration}
             >
               Reservar mi lugar gratis
               <ArrowRight aria-hidden="true" />
@@ -266,7 +267,7 @@ export default function AbcConsultaPediatricaLanding() {
           <button
             className="abc-checkout-cta abc-checkout-cta-final"
             type="button"
-            onClick={() => openRegistration("final")}
+            onClick={openRegistration}
           >
             <ClipboardCheck aria-hidden="true" />
             Registrarme gratis
@@ -279,7 +280,7 @@ export default function AbcConsultaPediatricaLanding() {
       <button
         className="abc-floating-checkout"
         type="button"
-        onClick={() => openRegistration("floating")}
+        onClick={openRegistration}
       >
         <ClipboardCheck aria-hidden="true" />
         <span>Registrarme gratis</span>

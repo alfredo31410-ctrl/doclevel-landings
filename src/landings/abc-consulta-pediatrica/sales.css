@@ -502,3 +502,459 @@
   }
 }
 
+/* Responsive hardening for the registration and thank-you routes. */
+.abc-page img {
+  max-width: 100%;
+}
+
+.abc-page button,
+.abc-page a {
+  touch-action: manipulation;
+}
+
+@media (min-width: 601px) and (max-width: 840px) {
+  .abc-floating-checkout {
+    display: none;
+  }
+
+  .abc-hero,
+  .abc-thanks-hero {
+    padding-inline: clamp(24px, 5vw, 42px);
+  }
+
+  .abc-hero-visual,
+  .abc-thanks-visual {
+    min-height: clamp(570px, 82vw, 650px);
+  }
+
+  .abc-visual-orbit {
+    height: min(72vw, 560px);
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(72vw, 560px);
+  }
+
+  .abc-hero-visual > img,
+  .abc-thanks-visual > img {
+    height: 94%;
+    left: 50%;
+    max-width: 620px;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(84%, 620px);
+  }
+
+  .abc-note-one {
+    left: 4%;
+  }
+
+  .abc-note-two {
+    right: 4%;
+    top: 30%;
+  }
+
+  .abc-speaker-card,
+  .abc-thanks-event-card {
+    left: 4%;
+  }
+}
+
+@media (max-width: 600px) {
+  .abc-page {
+    width: 100%;
+  }
+
+  .abc-header {
+    padding-left: max(14px, env(safe-area-inset-left));
+    padding-right: max(14px, env(safe-area-inset-right));
+  }
+
+  .abc-header .logo-exit {
+    left: max(14px, env(safe-area-inset-left));
+  }
+
+  .abc-sales-badge,
+  .abc-confirmed-badge {
+    flex: 0 1 auto;
+    line-height: 1.15;
+    max-width: min(52vw, 180px);
+    white-space: normal;
+  }
+
+  .abc-sales-badge > span {
+    display: block;
+  }
+
+  .abc-hero,
+  .abc-thanks-hero {
+    gap: 20px;
+    min-height: auto;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  .abc-hero-copy,
+  .abc-thanks-copy {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .abc-hero-copy h1,
+  .abc-thanks-copy h1,
+  .abc-section-heading h2,
+  .abc-sales-details-copy > h2,
+  .abc-sales-close-copy h2,
+  .abc-audience-card h2 {
+    overflow-wrap: anywhere;
+  }
+
+  .abc-sales-proof,
+  .abc-conversion-actions,
+  .abc-sales-details-copy,
+  .abc-audience-card,
+  .abc-sales-close-action {
+    max-width: none;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .abc-hero-visual,
+  .abc-thanks-visual {
+    min-height: clamp(480px, 137vw, 540px);
+    width: 100%;
+  }
+
+  .abc-visual-orbit {
+    height: min(108vw, 420px);
+    left: 50%;
+    right: auto;
+    top: 38px;
+    transform: translateX(-50%);
+    width: min(108vw, 420px);
+  }
+
+  .abc-visual-word {
+    left: 50%;
+    right: auto;
+    top: 19%;
+    transform: translateX(-50%);
+  }
+
+  .abc-hero-visual > img,
+  .abc-thanks-visual > img {
+    bottom: 64px;
+    height: 82%;
+    left: 50%;
+    max-width: none;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(116%, 470px);
+  }
+
+  .abc-floating-note {
+    max-width: min(44vw, 150px);
+  }
+
+  .abc-note-one {
+    left: 0;
+    top: 7%;
+  }
+
+  .abc-note-two {
+    display: none;
+  }
+
+  .abc-speaker-card,
+  .abc-thanks-event-card {
+    border-radius: 17px;
+    left: 0;
+    padding: 17px 18px;
+    right: 0;
+  }
+
+  .abc-speaker-card strong {
+    font-size: 0.95rem;
+  }
+
+  .abc-thanks-event-card > span {
+    align-items: flex-start;
+    line-height: 1.35;
+  }
+
+  .abc-thanks-event-card svg {
+    flex: 0 0 auto;
+  }
+
+  .abc-sales-intro,
+  .abc-sales-details,
+  .abc-sales-close,
+  .abc-method {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  .abc-method-card,
+  .abc-contrast-card,
+  .abc-audience-card {
+    overflow-wrap: anywhere;
+  }
+
+  .abc-floating-checkout {
+    display: none;
+  }
+
+  .abc-sales-close {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+
+  .abc-modal-backdrop {
+    padding:
+      max(8px, env(safe-area-inset-top))
+      max(8px, env(safe-area-inset-right))
+      max(8px, env(safe-area-inset-bottom))
+      max(8px, env(safe-area-inset-left));
+  }
+
+  .abc-modal {
+    max-height: calc(100dvh - 16px);
+    padding: 28px 14px 16px;
+    width: 100%;
+  }
+
+  .abc-modal h2 {
+    font-size: clamp(1.55rem, 7vw, 2rem);
+    padding-right: 42px;
+  }
+
+  .abc-modal .modal-close {
+    height: 38px;
+    right: 12px;
+    top: 12px;
+    width: 38px;
+  }
+
+  .abc-active-campaign {
+    border-radius: 12px;
+  }
+
+  .abc-thanks-steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .abc-thanks-steps > div {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .abc-header {
+    height: 66px;
+  }
+
+  .abc-header .logo-exit {
+    top: 12px;
+  }
+
+  .abc-sales-page .abc-header .logo-exit {
+    min-height: 42px;
+    padding: 5px 8px;
+  }
+
+  .abc-sales-page .abc-header .logo-exit img {
+    height: 29px;
+    max-width: 105px;
+  }
+
+  .abc-header .logo-exit img {
+    height: 38px;
+  }
+
+  .abc-sales-badge,
+  .abc-confirmed-badge {
+    font-size: 0.52rem;
+    gap: 6px;
+    padding: 6px 8px;
+  }
+
+  .abc-sales-badge svg,
+  .abc-confirmed-badge svg {
+    height: 15px;
+    width: 15px;
+  }
+
+  .abc-hero,
+  .abc-thanks-hero {
+    padding-top: 24px;
+  }
+
+  .abc-hero-copy h1 {
+    font-size: clamp(3rem, 15vw, 4rem);
+    max-width: none;
+  }
+
+  .abc-thanks-copy h1 {
+    font-size: clamp(3.15rem, 16vw, 4.3rem);
+  }
+
+  .abc-kicker {
+    font-size: 0.66rem;
+    letter-spacing: 0.065em;
+  }
+
+  .abc-lead {
+    font-size: 0.92rem;
+  }
+
+  .abc-sales-proof > div {
+    font-size: 0.69rem;
+    padding-inline: 12px;
+  }
+
+  .abc-checkout-cta,
+  .abc-whatsapp-cta {
+    font-size: 0.8rem;
+    min-height: 56px;
+    padding-inline: 17px;
+  }
+
+  .abc-hero-visual,
+  .abc-thanks-visual {
+    min-height: clamp(470px, 137vw, 525px);
+  }
+
+  .abc-speaker-card strong {
+    font-size: 0.9rem;
+  }
+
+  .abc-section-heading h2,
+  .abc-sales-details-copy > h2,
+  .abc-sales-close-copy h2 {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+  }
+
+  .abc-method-card {
+    min-height: 0;
+  }
+
+  .abc-method-card > svg {
+    margin: 26px 0 20px;
+  }
+
+  .abc-thanks-steps {
+    gap: 10px;
+  }
+
+  .abc-thanks-steps > div {
+    align-items: flex-start;
+  }
+
+  .abc-thanks-steps > div > span {
+    flex: 0 0 auto;
+    height: 34px;
+    width: 34px;
+  }
+
+  .abc-thanks-steps p {
+    font-size: 0.62rem;
+  }
+
+  .abc-thanks-steps strong {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .abc-badge-modality,
+  .abc-floating-note {
+    display: none;
+  }
+
+  .abc-sales-badge,
+  .abc-confirmed-badge {
+    max-width: 128px;
+  }
+
+  .abc-hero-copy h1 {
+    font-size: 2.85rem;
+  }
+
+  .abc-thanks-copy h1 {
+    font-size: 3rem;
+  }
+
+  .abc-hero-visual,
+  .abc-thanks-visual {
+    min-height: 455px;
+  }
+
+  .abc-visual-orbit {
+    top: 32px;
+  }
+
+  .abc-speaker-card,
+  .abc-thanks-event-card {
+    padding: 15px;
+  }
+
+  .abc-floating-checkout {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) and (min-width: 601px) {
+  .abc-floating-checkout {
+    display: none;
+  }
+
+  .abc-header {
+    height: 66px;
+  }
+
+  .abc-header .logo-exit {
+    top: 10px;
+  }
+
+  .abc-hero,
+  .abc-thanks-hero {
+    align-items: center;
+    gap: 20px;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.85fr);
+    min-height: auto;
+    padding: 24px 24px 42px;
+  }
+
+  .abc-hero-visual,
+  .abc-thanks-visual {
+    min-height: 430px;
+  }
+
+  .abc-visual-orbit {
+    height: 390px;
+    width: 390px;
+  }
+
+  .abc-hero-visual > img,
+  .abc-thanks-visual > img {
+    height: 92%;
+    width: 100%;
+  }
+
+  .abc-floating-note {
+    display: none;
+  }
+
+  .abc-speaker-card,
+  .abc-thanks-event-card {
+    bottom: 0;
+    left: 0;
+    width: min(78%, 320px);
+  }
+
+  .abc-modal {
+    max-height: calc(100dvh - 12px);
+  }
+}
+

@@ -14,8 +14,8 @@ import { LogoExit } from "../../../components/landing/LogoExit";
 import { abcConsultaConfig, whatsappGroupUrl } from "../config";
 import {
   captureAbcAttribution,
+  configureAbcMetaPixel,
   trackAbcCompleteRegistration,
-  trackAbcWhatsAppContact,
 } from "../tracking";
 
 export default function AbcConsultaPediatricaGraciasPage() {
@@ -28,6 +28,7 @@ export default function AbcConsultaPediatricaGraciasPage() {
         "Tu formulario fue enviado. Entra al grupo oficial de WhatsApp para completar tu registro y recibir el acceso a la clase."
       );
     captureAbcAttribution(window.location.search);
+    configureAbcMetaPixel();
     trackAbcCompleteRegistration();
   }, []);
 
@@ -63,7 +64,6 @@ export default function AbcConsultaPediatricaGraciasPage() {
             href={whatsappGroupUrl}
             target="_blank"
             rel="noreferrer"
-            onClick={trackAbcWhatsAppContact}
           >
             <MessageCircle aria-hidden="true" />
             Entrar al grupo de WhatsApp

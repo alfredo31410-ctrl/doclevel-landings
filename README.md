@@ -136,10 +136,18 @@ Vercel puede construir el sitio con `npm run build`. Las rutas se sirven desde l
 
 ## El ABC de la consulta pediátrica
 
-La campaña usa una landing informativa de venta directa y continúa el cierre
-con un asesor por WhatsApp. El número y el mensaje inicial se administran desde
-`sales` en `src/landings/abc-consulta-pediatrica/config.js`.
+La campaña usa el formulario `373` de ActiveCampaign y dirige los registros
+confirmados a `/landings/abc-consulta-pediatrica/gracias`, donde se muestra el
+acceso al grupo oficial de WhatsApp.
 
-El tracking incluye `PageView`, `ViewContent`, `WhatsAppSalesIntent` y
-`Contact`. También conserva UTMs, IDs de anuncios, `fbclid` y `gclid`, y
-refleja los eventos de la campaña en `dataLayer`.
+El único evento de conversión de Meta para esta campaña es
+`CompleteRegistration`. `PageView` se conserva como evento técnico de visita;
+no se envían `ViewContent`, `RegistrationIntent` ni `Contact`. La configuración
+automática del píxel se desactiva en las rutas de esta campaña para evitar
+eventos inferidos como `SubscribedButtonClick`.
+
+`CompleteRegistration` se protege con una clave de sesión, memoria en la página
+y un `eventID` único y estable durante el registro. Esto evita duplicados entre
+la confirmación del formulario, la redirección y las recargas de la página de
+gracias. Los parámetros UTM, IDs de anuncios, `fbclid` y `gclid` se conservan
+durante el flujo.
