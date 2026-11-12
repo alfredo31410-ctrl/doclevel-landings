@@ -11,6 +11,8 @@ import LasPrimerasHorasPage from "../landings/las-primeras-hrs-de-tu-bebe/page";
 import LasPrimerasHorasGraciasPage from "../landings/las-primeras-hrs-de-tu-bebe/gracias/page";
 import MedicosDocentesPage from "../landings/medicos-docentes/page";
 import PrimerMesBebePage from "../landings/primer-mes-bebe-mx/page";
+import InfeccionesRespiratoriasPage from "../landings/infecciones-respiratorias/page";
+import InfeccionesRespiratoriasGraciasPage from "../landings/infecciones-respiratorias/gracias/page";
 
 function normalizePath(pathname) {
   const normalized = pathname.toLowerCase().replace(/\/+$/, "");
@@ -75,6 +77,14 @@ register(["/landings/abc-consulta-pediatrica"], AbcConsultaPediatricaPage);
 register(
   ["/landings/abc-consulta-pediatrica/gracias"],
   AbcConsultaPediatricaGraciasPage
+);
+register(
+  ["/landings/infecciones-respiratorias"],
+  InfeccionesRespiratoriasPage
+);
+register(
+  ["/landings/infecciones-respiratorias/gracias"],
+  InfeccionesRespiratoriasGraciasPage
 );
 
 export function resolveRoute(pathname) {
