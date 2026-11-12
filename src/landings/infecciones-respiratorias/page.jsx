@@ -17,6 +17,7 @@ import doctorImage from "../../assets/papa-primerizo/doctor-papa-primerizo.png";
 import doclevelLogo from "../../../public/imgs-logos/doclevel-logo-blue-cropped.png";
 import { ActiveCampaignModal } from "./ActiveCampaignModal";
 import { infeccionesRespiratoriasConfig } from "./config";
+import { captureRespiratoryAttribution } from "./tracking";
 import "./styles.css";
 
 const route = [
@@ -44,6 +45,7 @@ export default function InfeccionesRespiratoriasPage() {
       "content",
       "Clase gratuita para médicos: una ruta clínica clara para evaluar, integrar y decidir ante infecciones respiratorias pediátricas."
     );
+    captureRespiratoryAttribution(window.location.search);
   }, []);
 
   return (
