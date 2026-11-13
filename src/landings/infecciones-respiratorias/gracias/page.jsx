@@ -3,7 +3,12 @@ import { CalendarDays, CheckCircle2, Check, Clock3, MessageCircle, Monitor } fro
 
 import { infeccionesRespiratoriasConfig } from "../config";
 import doclevelLogo from "../../../../public/imgs-logos/doclevel-logo-blue-cropped.png";
-import { captureRespiratoryAttribution, trackRespiratoryWhatsAppJoin } from "../tracking";
+import {
+  captureRespiratoryAttribution,
+  configureRespiratoryMetaPixel,
+  trackRespiratoryRegistration,
+  trackRespiratoryWhatsAppJoin,
+} from "../tracking";
 import "../styles.css";
 
 function RespLogo() {
@@ -18,6 +23,8 @@ export default function InfeccionesRespiratoriasGraciasPage() {
   useEffect(() => {
     document.title = `Último paso | ${infeccionesRespiratoriasConfig.title}`;
     captureRespiratoryAttribution(window.location.search);
+    configureRespiratoryMetaPixel();
+    trackRespiratoryRegistration();
   }, []);
 
   return (
