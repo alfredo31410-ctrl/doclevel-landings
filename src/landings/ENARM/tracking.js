@@ -101,8 +101,6 @@ export function trackRoutePageView(routePath) {
   if (lastTrackedPage === routePath) return;
 
   lastTrackedPage = routePath;
-  trackMetaEvent("PageView");
-
   if (routePath === "/enarm") {
     trackMetaEvent("ViewContent", {
       content_name: "Clase gratis ENARM 2026",
