@@ -3,7 +3,7 @@ import { infeccionesRespiratoriasConfig } from "./config";
 
 const trackingKey = infeccionesRespiratoriasConfig.slug;
 const attributionKey = `${trackingKey}:attribution`;
-const leadEventIdKey = `${trackingKey}:lead:event-id`;
+const registrationEventIdKey = `${trackingKey}:complete-registration:event-id`;
 const metaPixelId = "1022353930324591";
 const attributionFields = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "campaign_id", "adset_id", "ad_id", "placement", "fbclid", "gclid"];
 
@@ -33,13 +33,13 @@ function createEventId() {
   return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 }
 
-function getLeadEventId() {
+function getRegistrationEventId() {
   if (typeof window === "undefined") return createEventId();
   try {
-    const storedEventId = window.sessionStorage.getItem(leadEventIdKey);
+    const storedEventId = window.sessionStorage.getItem(registrationEventIdKey);
     if (storedEventId) return storedEventId;
     const eventId = createEventId();
-    window.sessionStorage.setItem(leadEventIdKey, eventId);
+    window.sessionStorage.setItem(registrationEventIdKey, eventId);
     return eventId;
   } catch {
     return createEventId();
@@ -54,11 +54,11 @@ export function configureRespiratoryMetaPixel() {
   if (typeof window !== "undefined" && typeof window.fbq === "function") window.fbq("set", "autoConfig", false, metaPixelId);
 }
 
-export function trackRespiratoryLead() {
+export function trackRespiratoryRegistration() {
   const parameters = leadParameters({ status: "completed" });
-  const eventId = getLeadEventId();
-  const tracked = trackMetaEventOnce("Lead", trackingKey, parameters, { eventID: eventId });
-  if (tracked) pushDataLayer("lead", { ...parameters, event_id: eventId });
+  const eventId = getRegistrationEventId();
+  const tracked = trackMetaEventOnce("CompleteRegistration", trackingKey, parameters, { eventID: eventId });
+  if (tracked) pushDataLayer("complete_registration", { ...parameters, event_id: eventId });
   return tracked;
 }
 

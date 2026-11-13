@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { X } from "lucide-react";
 
 import { infeccionesRespiratoriasConfig } from "./config";
-import { trackRespiratoryLead } from "./tracking";
+import { trackRespiratoryRegistration } from "./tracking";
 
 const { activeCampaign, thankYou } = infeccionesRespiratoriasConfig;
 const formClass = `_form_${activeCampaign.formId}`;
@@ -46,7 +46,7 @@ export function ActiveCampaignModal({ isOpen, onClose }) {
       const success = [...wrapper.querySelectorAll("._form-thank-you, ._form-thank-you-message, ._form_success")]
         .some((node) => node instanceof HTMLElement && node.textContent?.trim() && window.getComputedStyle(node).display !== "none");
       if (success) {
-        trackRespiratoryLead();
+        trackRespiratoryRegistration();
         goToThanks();
       }
     });
