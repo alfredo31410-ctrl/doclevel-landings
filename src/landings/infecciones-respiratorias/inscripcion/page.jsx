@@ -48,7 +48,7 @@ export default function InfeccionesRespiratoriasInscripcionPage() {
         <a className="resp-sale-logo" href="https://www.doclevelacademy.com/" aria-label="Volver al sitio principal de DocLevel">
           <img src={doclevelLogo} alt="DocLevel" />
         </a>
-        <CheckoutButton className="resp-sale-cta--header">Inscribirme</CheckoutButton>
+        <CheckoutButton className="resp-sale-cta--header">INSCRIBIRME AHORA</CheckoutButton>
       </header>
 
       <section className="resp-sale-hero" aria-labelledby="resp-sale-title">
@@ -61,7 +61,7 @@ export default function InfeccionesRespiratoriasInscripcionPage() {
             <span><Check aria-hidden="true" /> Enfoque práctico para consulta</span>
             <span><Check aria-hidden="true" /> Decisiones más claras</span>
           </div>
-          <CheckoutButton>Quiero inscribirme ahora</CheckoutButton>
+          <CheckoutButton>INSCRIBIRME AHORA</CheckoutButton>
           <p className="resp-sale-trust"><ShieldCheck aria-hidden="true" /> Pago seguro a través de Hotmart</p>
         </div>
         <div className="resp-sale-hero-visual" aria-label={infeccionesRespiratoriasConfig.instructor}>
@@ -89,16 +89,16 @@ export default function InfeccionesRespiratoriasInscripcionPage() {
       <section className="resp-sale-instructor" aria-labelledby="resp-sale-instructor-title">
         <div className="resp-sale-instructor-mark"><HeartPulse aria-hidden="true" /></div>
         <div><p>Tu instructor</p><h2 id="resp-sale-instructor-title">{infeccionesRespiratoriasConfig.instructor}</h2><span>Una formación enfocada en llevar una ruta más clara a tu próxima consulta.</span></div>
-        <CheckoutButton className="resp-sale-cta--outline">Inscribirme ahora</CheckoutButton>
+        <CheckoutButton className="resp-sale-cta--outline">INSCRIBIRME AHORA</CheckoutButton>
       </section>
 
       <section className="resp-sale-offer" aria-labelledby="resp-sale-offer-title">
         <div><p>Inscripción en línea</p><h2 id="resp-sale-offer-title">Empieza a decidir con <span>más claridad clínica.</span></h2><p>Completa tu inscripción a {purchase.productTitle} de forma segura y recibe las indicaciones de acceso directamente desde Hotmart.</p></div>
-        <div className="resp-sale-offer-card"><Monitor aria-hidden="true" /><strong>Acceso online</strong><span>Inscripción y pago seguro</span><CheckoutButton>Ir al checkout</CheckoutButton><small><CheckCircle2 aria-hidden="true" /> Plataforma de pago Hotmart</small></div>
+        <div className="resp-sale-offer-card"><Monitor aria-hidden="true" /><strong>Acceso online</strong><span>Inscripción y pago seguro</span><CheckoutButton>INSCRIBIRME AHORA</CheckoutButton><small><CheckCircle2 aria-hidden="true" /> Plataforma de pago Hotmart</small></div>
       </section>
 
       <footer className="resp-sale-footer"><img src={doclevelLogo} alt="DocLevel" /><span>© {new Date().getFullYear()} DocLevel Academy</span></footer>
-      <div className="resp-sale-mobile-cta"><CheckoutButton>Inscribirme ahora</CheckoutButton></div>
+      <div className="resp-sale-mobile-cta"><CheckoutButton>INSCRIBIRME AHORA</CheckoutButton></div>
     </main>
   );
 }
