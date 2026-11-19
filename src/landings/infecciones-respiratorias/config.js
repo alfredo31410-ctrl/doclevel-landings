@@ -16,6 +16,7 @@ export const infeccionesRespiratoriasConfig = {
     whatsappUrl: "https://chat.whatsapp.com/JymDUjIXuHiBBms3tstzKC",
   },
   purchase: {
+    productTitle: "Consulta Pediátrica: Enfoque Respiratorio",
     checkoutUrl: "https://pay.hotmart.com/D108556673S?checkoutMode=10",
   },
 };

@@ -54,7 +54,7 @@ export default function InfeccionesRespiratoriasInscripcionPage() {
       <section className="resp-sale-hero" aria-labelledby="resp-sale-title">
         <div className="resp-sale-hero-copy">
           <p className="resp-sale-eyebrow"><Stethoscope aria-hidden="true" /> Formación clínica para médicos</p>
-          <h1 id="resp-sale-title">Infecciones respiratorias pediátricas: <span>de la A a la Z.</span></h1>
+          <h1 id="resp-sale-title">{purchase.productTitle}</h1>
           <p className="resp-sale-lead">Una ruta clínica para evaluar, integrar y decidir con mayor claridad ante tos, fiebre y síntomas respiratorios en pediatría.</p>
           <div className="resp-sale-points" aria-label="Lo que fortalecerás">
             <span><Check aria-hidden="true" /> Criterio para priorizar</span>
@@ -93,7 +93,7 @@ export default function InfeccionesRespiratoriasInscripcionPage() {
       </section>
 
       <section className="resp-sale-offer" aria-labelledby="resp-sale-offer-title">
-        <div><p>Inscripción en línea</p><h2 id="resp-sale-offer-title">Empieza a decidir con <span>más claridad clínica.</span></h2><p>Completa tu inscripción de forma segura y recibe las indicaciones de acceso directamente desde Hotmart.</p></div>
+        <div><p>Inscripción en línea</p><h2 id="resp-sale-offer-title">Empieza a decidir con <span>más claridad clínica.</span></h2><p>Completa tu inscripción a {purchase.productTitle} de forma segura y recibe las indicaciones de acceso directamente desde Hotmart.</p></div>
         <div className="resp-sale-offer-card"><Monitor aria-hidden="true" /><strong>Acceso online</strong><span>Inscripción y pago seguro</span><CheckoutButton>Ir al checkout</CheckoutButton><small><CheckCircle2 aria-hidden="true" /> Plataforma de pago Hotmart</small></div>
       </section>
 
