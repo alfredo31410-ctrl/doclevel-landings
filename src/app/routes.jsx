@@ -13,6 +13,7 @@ import MedicosDocentesPage from "../landings/medicos-docentes/page";
 import PrimerMesBebePage from "../landings/primer-mes-bebe-mx/page";
 import InfeccionesRespiratoriasPage from "../landings/infecciones-respiratorias/page";
 import InfeccionesRespiratoriasGraciasPage from "../landings/infecciones-respiratorias/gracias/page";
+import InfeccionesRespiratoriasInscripcionPage from "../landings/infecciones-respiratorias/inscripcion/page";
 
 function normalizePath(pathname) {
   const normalized = pathname.toLowerCase().replace(/\/+$/, "");
@@ -85,6 +86,10 @@ register(
 register(
   ["/landings/infecciones-respiratorias/gracias"],
   InfeccionesRespiratoriasGraciasPage
+);
+register(
+  ["/landings/infecciones-respiratorias/inscripcion"],
+  InfeccionesRespiratoriasInscripcionPage
 );
 
 export function resolveRoute(pathname) {

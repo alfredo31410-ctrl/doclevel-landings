@@ -15,4 +15,7 @@ export const infeccionesRespiratoriasConfig = {
     url: "https://www.doclevelacademy.com/landings/infecciones-respiratorias/gracias",
     whatsappUrl: "https://chat.whatsapp.com/JymDUjIXuHiBBms3tstzKC",
   },
+  purchase: {
+    checkoutUrl: "https://pay.hotmart.com/D108556673S?checkoutMode=10",
+  },
 };

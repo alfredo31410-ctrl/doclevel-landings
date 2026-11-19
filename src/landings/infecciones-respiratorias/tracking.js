@@ -62,6 +62,16 @@ export function trackRespiratoryRegistration() {
   return tracked;
 }
 
+export function trackRespiratoryCheckout() {
+  const parameters = leadParameters({
+    content_category: "Inscripción a formación médica",
+    status: "checkout_started",
+  });
+  const tracked = trackMetaEventOnce("InitiateCheckout", `${trackingKey}:checkout`, parameters);
+  if (tracked) pushDataLayer("initiate_checkout", parameters);
+  return tracked;
+}
+
 export function trackRespiratoryWhatsAppJoin() {
   const parameters = leadParameters({ content_name: "Ingreso al grupo de WhatsApp" });
   const tracked = trackMetaEventOnce("Contact", `${trackingKey}:whatsapp`, parameters);
